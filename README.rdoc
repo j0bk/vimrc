@@ -1,0 +1,11 @@
+== Instalación
+    cd ~
+    git clone git@github.com:juancolacelli/vimrc.git
+    mv vimrc .vim
+    ln -s .vim/vimrc .vimrc
+
+== Plugins utilizados
+  * snipmate.vim: https://github.com/msanders/snipmate.vim
+  * taglist.vim: https://github.com/vim-scripts/taglist.vim
+  * vim-rails: https://github.com/tpope/vim-rails
+  * vim-autocomplpop: http://www.vim.org/scripts/script.php?script_id=1879

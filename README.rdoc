@@ -1,6 +1,6 @@
 == Instalación
     cd ~
-    git clone git@github.com:juancolacelli/vimrc.git
+    git clone git://github.com/juancolacelli/vimrc.git
     mv vimrc .vim
     ln -s .vim/vimrc .vimrc
 

@@ -198,11 +198,6 @@ hi LineNr term=none cterm=none ctermbg=7 ctermfg=0 guibg=#222222 guifg=#DDEEFF "
 hi Pmenu term=none cterm=none ctermfg=7 ctermbg=0 guibg=Gray guifg=Black
 hi PmenuSel cterm=bold ctermfg=15 ctermbg=3 gui=bold guifg=White guibg=#5555ff
 
-"Estoy en el GUI?
-if has("gui_running")
-  set transparency=12 "Transparencia
-endif
-
 """"""""""""""""""""
 " .vimrc
 """"""""""""""""""""

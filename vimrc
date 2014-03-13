@@ -86,6 +86,11 @@ set path=**
 set title "Cambia el título de la terminal
 set ttyfast "Terminal rapida
 
+" NERDTree auto-abrir
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
+
 """"""""""""""""""""
 " Funciones
 """"""""""""""""""""
@@ -118,6 +123,10 @@ nmap <F12> :set mouse=a<CR>
 "No permite el uso del mouse
 imap <S-F12> <esc>:set mouse=r<CR>
 nmap <S-F12> :set mouse=r<CR>
+
+"Tab
+imap <tab> <esc>:NERDTreeToggle<CR>
+nmap <tab> :NERDTreeToggle<CR>
 
 "Mouse del medio pega
 imap <MouseMiddle> <esc>"*p"
@@ -182,7 +191,7 @@ map <C-l> <C-w>l
 
 set background=dark "Fondo oscuro
 set cursorline "Resalta la linea actual
-"set cursorcolumn "Resalta la columna actual (comentado por conflicto con autocomplete)
+set cursorcolumn "Resalta la columna actual (comentado por conflicto con autocomplete)
 syn on "Resalta la sintaxis
 colorscheme vividchalk "Esquema de color
 

@@ -47,6 +47,7 @@ filetype plugin on "Permite la deteccion de archivo por plugin
 setlocal autoread
 set autoread "Detecta cambios
 set confirm "Confirmar guardar cambios al salir en vez de avisar cambios
+set colorcolumn=80 "Margen derecho para evitar lineas largas
 set hidden "Guarda los undo aunque se abra nuevamente el archivo
 set history=1000 "Historial de comandos
 set joinspaces "Junta espacios

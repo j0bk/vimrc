@@ -3,13 +3,13 @@
 """"""""""""""""""""
 
 " ACP y Supertab
-let g:acp_behaviorKeywordLength = 4 "Minimo de 4 caracteres para auto desplegar autocomplete
-let g:acp_completeOption = ".,w,b,u,U,kspell,s,i,d,t" "Opciones de autocomplete, agregar k para diccionarios (.,w,b,u,t and bien)
+let g:acp_behaviorKeywordLength=3 "Minimo de 3 caracteres para auto desplegar autocomplete
+let g:acp_completeOption=".,w,b,u,U,kspell,s,t" "Opciones de autocomplete, agregar k para diccionarios (.,w,b,u,t and bien)
 
 " Auto-complete
 set completeopt=longest,menuone,preview
-set complete = ".,w,b,u,U,kspell,s,i,d,t" "Para mejorar velocidad quitar la i
-"set dictionary=/usr/share/dict/words "Mas palabras
+set complete=".,w,b,u,U,kspell,s,t" "Para mejorar velocidad quitar la i
+set dictionary=/usr/share/dict/words "Mas palabras
 set ofu=syntaxcomplete#Complete
 set spelllang=en,es "Ingles-Español
 set spellsuggest=best,3 "3 resultados de diccionario

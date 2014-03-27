@@ -117,6 +117,10 @@ nmap <F6> :noh<CR>
 imap <F7> <esc> :%s/\r//g<CR>
 nmap <F7> :%s/\r//g<CR>
 
+"NERDTree
+imap <F8> <esc>:NERDTreeToggle<CR>
+nmap <F8> :NERDTreeToggle<CR>
+
 "Permite el uso del mouse
 imap <F12> <esc>:set mouse=a<CR>
 nmap <F12> :set mouse=a<CR>
@@ -124,10 +128,6 @@ nmap <F12> :set mouse=a<CR>
 "No permite el uso del mouse
 imap <S-F12> <esc>:set mouse=r<CR>
 nmap <S-F12> :set mouse=r<CR>
-
-"Tab
-imap <tab> <esc>:NERDTreeToggle<CR>
-nmap <tab> :NERDTreeToggle<CR>
 
 "Mouse del medio pega
 imap <MouseMiddle> <esc>"*p"

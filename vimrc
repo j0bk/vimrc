@@ -88,9 +88,10 @@ set title "Cambia el título de la terminal
 set ttyfast "Terminal rapida
 
 " NERDTree auto-abrir
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
+let NERDTreeShowBookmarks=1
 
 """"""""""""""""""""
 " Funciones
@@ -118,8 +119,8 @@ imap <F7> <esc> :%s/\r//g<CR>
 nmap <F7> :%s/\r//g<CR>
 
 "NERDTree
-imap <F8> <esc>:NERDTreeToggle<CR>
-nmap <F8> :NERDTreeToggle<CR>
+"imap <TAB> <esc>:NERDTreeToggle<CR>
+nmap <TAB> :NERDTreeToggle<CR>
 
 "Permite el uso del mouse
 imap <F12> <esc>:set mouse=a<CR>
@@ -211,6 +212,7 @@ hi PmenuSel cterm=bold ctermfg=15 ctermbg=3 gui=bold guifg=White guibg=#5555ff
 "Estoy en el GUI?
 if has("gui_running")
   set guioptions-=T "Deshabilita toolbar
+  set guifont=Monospace\ 8 "Tamaño de letra
 endif
 
 """"""""""""""""""""

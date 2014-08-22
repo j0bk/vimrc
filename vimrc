@@ -93,6 +93,9 @@ autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
 let NERDTreeShowBookmarks=1
 
+" Taglist en la derecha
+let Tlist_Use_Right_Window=1
+
 """"""""""""""""""""
 " Funciones
 """"""""""""""""""""

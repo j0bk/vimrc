@@ -227,3 +227,6 @@ map <leader>v :e! ~/.vimrc<cr>"
 
 "Reabrir .vimrc cuando se guarda
 autocmd! bufwritepost .vimrc source ~/.vimrc"
+
+"Pathogen (para Sintastic)
+execute pathogen#infect()

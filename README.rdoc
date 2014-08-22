@@ -5,9 +5,16 @@
     ln -s .vim/vimrc .vimrc
 
 == Plugins utilizados
+  * jshint: https://github.com/walm/jshint.vim
+  * pathogen: https://github.com/tpope/vim-pathogen
   * snipmate.vim: https://github.com/msanders/snipmate.vim
+  * syntastic: https://github.com/scrooloose/syntastic
   * tagbar.vim: http://majutsushi.github.io/tagbar/
   * vim-autocomplpop: http://www.vim.org/scripts/script.php?script_id=1879
+
+== Librerias utilizadas
+  * Ctags: sudo apt-get install exuberant-ctags
+  * JSHint: sudo npm install -g jshint
 
 == Archivos de idioma
   * http://ftp.vim.org/vim/runtime/spell/

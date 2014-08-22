@@ -3,7 +3,7 @@
 """"""""""""""""""""
 
 " ACP y Supertab
-let g:acp_behaviorKeywordLength=3 "Minimo de 3 caracteres para auto desplegar autocomplete
+let g:acp_behaviorKeywordLength=4 "Minimo de 4 caracteres para auto desplegar autocomplete
 let g:acp_completeOption=".,w,b,u,U,kspell,s,t" "Opciones de autocomplete, agregar k para diccionarios (.,w,b,u,t and bien)
 
 " Auto-complete
@@ -98,8 +98,8 @@ let NERDTreeShowBookmarks=1
 """"""""""""""""""""
 
 "Muestra todas las definiciones del archivo
-imap <F1> <esc>:Tlist<CR>
-nmap <F1> :Tlist<CR>
+imap <F1> <esc>:TagbarToggle<CR>
+nmap <F1> :TagbarToggle<CR>
 
 "Modo para pegar con tabulación
 set pastetoggle=<F2>

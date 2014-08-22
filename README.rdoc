@@ -8,3 +8,6 @@
   * snipmate.vim: https://github.com/msanders/snipmate.vim
   * tagbar.vim: http://majutsushi.github.io/tagbar/
   * vim-autocomplpop: http://www.vim.org/scripts/script.php?script_id=1879
+
+== Archivos de idioma
+  * http://ftp.vim.org/vim/runtime/spell/

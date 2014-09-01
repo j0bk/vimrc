@@ -190,6 +190,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+"Fácil navegación de errores
+imap <A-j> <esc>:lnext<CR>
+map <A-j> :lnext<CR>
+imap <A-k> <esc>:lprevious<CR>
+map <A-k> :lprevious<CR>
+
 """"""""""""""""""""
 " Colores
 """"""""""""""""""""

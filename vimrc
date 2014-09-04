@@ -2,9 +2,9 @@
 " Configurations
 """"""""""""""""""""
 
-" ACP y Supertab
-let g:acp_behaviorKeywordLength=4 "Minimo de 4 caracteres para auto desplegar autocomplete
-let g:acp_completeOption=".,w,b,u,U,kspell,s,t" "Opciones de autocomplete, agregar k para diccionarios (.,w,b,u,t and bien)
+" ACP y Supertab (comentado porque tildaba el vim)
+"let g:acp_behaviorKeywordLength=4 "Minimo de 4 caracteres para auto desplegar autocomplete
+"let g:acp_completeOption=".,w,b,u,U,kspell,s,t" "Opciones de autocomplete, agregar k para diccionarios (.,w,b,u,t and bien)
 
 " Auto-complete
 set completeopt=longest,menuone,preview

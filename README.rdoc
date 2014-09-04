@@ -5,6 +5,7 @@
     ln -s .vim/vimrc .vimrc
 
 == Plugins utilizados
+  * fugitive: https://github.com/tpope/vim-fugitive
   * jshint: https://github.com/walm/jshint.vim
   * pathogen: https://github.com/tpope/vim-pathogen
   * snipmate.vim: https://github.com/msanders/snipmate.vim

@@ -236,3 +236,6 @@ autocmd! bufwritepost .vimrc source ~/.vimrc"
 
 "Pathogen (para Sintastic)
 execute pathogen#infect()
+
+"Coffeescript colors
+au BufNewFile,BufRead *.coffee set filetype=coffee

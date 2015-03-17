@@ -14,6 +14,7 @@ Plugins
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [snipmate.vim](https://github.com/msanders/snipmate.vim)
 * [syntastic](https://github.com/scrooloose/syntastic)
+* [tabular](https://github.com/godlygeek/tabular)
 * [tagbar.vim](https://github.com/majutsushi/tagbar)
 * [vim-autocomplpop](http://www.vim.org/scripts/script.php?script_id=1879)
 * [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
@@ -28,7 +29,7 @@ Libraries
 
     sudo apt-get install exuberant-ctags
 
-**JSHint**
+**jshint**
 
     sudo npm install -g jshint
 

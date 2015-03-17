@@ -19,6 +19,7 @@ Plugins
 * [vim-autocomplpop](http://www.vim.org/scripts/script.php?script_id=1879)
 * [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [vim-jade](https://github.com/digitaltoad/vim-jade)
 * [vim-pathogen](https://github.com/tpope/vim-pathogen)
 * [vim-rails](https://github.com/tpope/vim-rails)

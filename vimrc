@@ -241,3 +241,10 @@ execute pathogen#infect()
 
 "Coffeescript colors
 au BufNewFile,BufRead *.coffee set filetype=coffee
+
+"GitGutter Color
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=white guifg=white guibg=darkgreen
+highlight GitGutterChange ctermfg=white guifg=white guibg=darkyellow
+highlight GitGutterDelete ctermfg=white guifg=white guibg=darkred
+highlight GitGutterChangeDelete ctermfg=white guifg=white guibg=darkyellow

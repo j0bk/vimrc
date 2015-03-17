@@ -19,7 +19,7 @@ set wildmenu "Autocompleta en consola
 set wildmode=list:longest "Permite una lista larga al autocompletar
 
 " Tabulación
-filetype indent on "Tabulacion por tipo de archivo
+filetype plugin indent on "Tabulacion por tipo de archivo
 set autoindent "Tabs automaticos
 set copyindent "Copia la tabulación anterior
 set expandtab "Espacios en vez de tabs
@@ -42,8 +42,6 @@ set noswapfile "Deshabilitar swap
 set nowritebackup "Deshabilitar backups
 
 " Edición
-filetype on "Detecta tipo de archivos
-filetype plugin on "Permite la deteccion de archivo por plugin
 setlocal autoread
 set autoread "Detecta cambios
 set confirm "Confirmar guardar cambios al salir en vez de avisar cambios
@@ -120,6 +118,10 @@ nmap <F6> :noh<CR>
 "Quita los enters del final
 imap <F7> <esc> :%s/\r//g<CR>
 nmap <F7> :%s/\r//g<CR>
+
+"Quita los espacios de mas
+imap <F7> <esc> :%s/\s\+$//g<CR>
+nmap <F7> :%s/\s\+$//g<CR>
 
 "NERDTree
 "imap <TAB> <esc>:NERDTreeToggle<CR>

@@ -24,6 +24,7 @@ Plugins
 * [vim-jade](https://github.com/digitaltoad/vim-jade)
 * [vim-pathogen](https://github.com/tpope/vim-pathogen)
 * [vim-rails](https://github.com/tpope/vim-rails)
+* [Vundle.vim](https://github.com/gmarik/Vundle.vim)
 
 Libraries
 ---

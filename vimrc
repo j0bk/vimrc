@@ -248,3 +248,24 @@ highlight GitGutterAdd ctermfg=white guifg=white guibg=darkgreen
 highlight GitGutterChange ctermfg=white guifg=white guibg=darkyellow
 highlight GitGutterDelete ctermfg=white guifg=white guibg=darkred
 highlight GitGutterChangeDelete ctermfg=white guifg=white guibg=darkyellow
+
+"Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"Plugins
+Plugin 'airblade/vim-gitgutter'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'majutsushi/tagbar'
+Plugin 'msanders/snipmate.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-pathogen'
+Plugin 'tpope/vim-rails'
+Plugin 'walm/jshint.vim'

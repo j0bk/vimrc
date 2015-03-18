@@ -250,8 +250,6 @@ highlight GitGutterDelete ctermfg=white guifg=white guibg=darkred
 highlight GitGutterChangeDelete ctermfg=white guifg=white guibg=darkyellow
 
 "Vundle
-set nocompatible
-filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 

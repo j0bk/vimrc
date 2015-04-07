@@ -3,8 +3,8 @@
 """"""""""""""""""""
 
 " ACP y Supertab (comentado porque tildaba el vim)
-let g:acp_behaviorKeywordLength=4 "Minimo de 4 caracteres para auto desplegar autocomplete
-let g:acp_completeOption=".,w,b,u,U,kspell,s,t" "Opciones de autocomplete, agregar k para diccionarios (.,w,b,u,t and bien)
+"let g:acp_behaviorKeywordLength=4 "Minimo de 4 caracteres para auto desplegar autocomplete
+"let g:acp_completeOption=".,w,b,u,U,kspell,s,t" "Opciones de autocomplete, agregar k para diccionarios (.,w,b,u,t and bien)
 
 " Auto-complete
 set completeopt=longest,menuone,preview
@@ -223,7 +223,7 @@ hi PmenuSel cterm=bold ctermfg=15 ctermbg=3 gui=bold guifg=White guibg=#5555ff
 "Estoy en el GUI?
 if has("gui_running")
   set guioptions-=T "Deshabilita toolbar
-  set guifont=Monospace\ 8 "Tamaño de letra
+  set guifont=Monospace\ 7 "Tamaño de letra
 endif
 
 """"""""""""""""""""
@@ -256,6 +256,7 @@ call vundle#begin()
 "Plugins
 Plugin 'airblade/vim-gitgutter'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'garbas/vim-snipmate'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'kchmck/vim-coffee-script'

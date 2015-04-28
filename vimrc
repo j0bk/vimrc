@@ -157,6 +157,9 @@ autocmd! bufwritepost .vimrc source ~/.vimrc"
 " Coffeescript colors
 au BufNewFile,BufRead *.coffee set filetype=coffee
 
+" GitGutter
+hi clear SignColumn
+
 " NeoComplete
 let g:neocomplete#enable_at_startup = 1
 ino <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))

@@ -63,6 +63,9 @@ set mousehide " Hide mouse when writing
 set backspace=indent,eol,start " Flexible erasing
 set more                       " Enable more results
 
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 
 """"""""""""""""""""
 " Funciones
@@ -180,6 +183,12 @@ nno <F2> :Tagbar<cr>
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
 " Plugins
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
@@ -187,6 +196,7 @@ Plugin 'bling/vim-airline'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kshenoy/vim-signature'
@@ -194,5 +204,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-pathogen'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'

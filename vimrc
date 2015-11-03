@@ -5,7 +5,7 @@ execute pathogen#infect()
 " Configurations
 """"""""""""""""""""
 set spell                 " Spelling
-set spelllang=en,es       " Spelling languages
+set spelllang=en          " Spelling languages
 set wildmenu              " Terminal autocomplete
 set wildmode=list:longest " Long terminal autocomplete
 
@@ -119,7 +119,7 @@ map <C-l> <C-w>l
 " Colors
 """"""""""""""""""""
 set background=dark    " Dark background
-colorscheme solarized  " Color scheme
+colorscheme vividchalk " Color scheme
 set cursorline         " Highlight current line
 set cursorcolumn       " Highlight current column
 set laststatus=2       " Show statusbar
@@ -131,11 +131,14 @@ hi CursorLine term=underline cterm=underline guibg=#333333 "Color de la linea ac
 hi CursorColumn term=underline cterm=underline ctermbg=0 ctermfg=2 guibg=#333333 "Color de la columna actual
 
 " Line number color
-hi LineNr term=none cterm=none ctermbg=7 ctermfg=0 guibg=#222222 guifg=#DDEEFF "Color de la columna de números
+hi LineNr term=none cterm=none ctermbg=0 ctermfg=7 guibg=#222222 guifg=#DDEEFF "Color de la columna de números
 
 " Autocomplete color
 hi Pmenu term=none cterm=none ctermfg=7 ctermbg=0 guibg=Gray guifg=Black
 hi PmenuSel cterm=bold ctermfg=15 ctermbg=3 gui=bold guifg=White guibg=#5555ff
+
+" Transparent background
+hi Normal ctermbg=none
 
 " GUI?
 if has("gui_running")
@@ -191,7 +194,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Plugins
 Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'aklt/plantuml-syntax'
 Plugin 'bling/vim-airline'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'gmarik/Vundle.vim'
@@ -201,8 +204,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
@@ -211,3 +214,4 @@ Plugin 'tpope/vim-pathogen'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-vividchalk'

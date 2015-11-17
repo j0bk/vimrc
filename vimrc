@@ -116,6 +116,15 @@ map <C-l> <C-w>l
 
 
 """"""""""""""""""""
+" Fold
+""""""""""""""""""""
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+
+""""""""""""""""""""
 " Colors
 """"""""""""""""""""
 set background=dark    " Dark background
@@ -136,9 +145,6 @@ hi LineNr term=none cterm=none ctermbg=0 ctermfg=7 guibg=#222222 guifg=#DDEEFF "
 " Autocomplete color
 hi Pmenu term=none cterm=none ctermfg=7 ctermbg=0 guibg=Gray guifg=Black
 hi PmenuSel cterm=bold ctermfg=15 ctermbg=3 gui=bold guifg=White guibg=#5555ff
-
-" Transparent background
-hi Normal ctermbg=none
 
 " GUI?
 if has("gui_running")

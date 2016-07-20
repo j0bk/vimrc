@@ -129,7 +129,6 @@ set foldlevel=1         "this is just what i use
 """"""""""""""""""""
 set background=dark    " Dark background
 colorscheme vividchalk " Color scheme
-set transparency=15
 set cursorline         " Highlight current line
 set cursorcolumn       " Highlight current column
 set laststatus=2       " Show statusbar
@@ -151,6 +150,7 @@ hi PmenuSel cterm=bold ctermfg=15 ctermbg=3 gui=bold guifg=White guibg=#5555ff
 if has("gui_running")
   set guioptions-=T        " Disable toolbar
   set guifont=Monospace\ 8 " Font size and family
+  set transparency=15
 endif
 
 

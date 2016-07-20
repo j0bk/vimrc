@@ -118,17 +118,17 @@ map <C-l> <C-w>l
 """"""""""""""""""""
 " Fold
 """"""""""""""""""""
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
+set foldmethod=indent   " Fold based on indent
+set foldnestmax=10      " Deepest fold is 10 levels
+set nofoldenable        " Dont fold by default
+set foldlevel=1         " This is just what i use
 
 
 """"""""""""""""""""
 " Colors
 """"""""""""""""""""
 set background=dark    " Dark background
-colorscheme gruvbox " Color scheme
+colorscheme gruvbox    " Color scheme
 set cursorline         " Highlight current line
 set cursorcolumn       " Highlight current column
 set laststatus=2       " Show statusbar
@@ -136,8 +136,8 @@ syn on                 " Highlight syntax
 
 " GUI?
 if has("gui_running")
-  set guioptions-=T        " Disable toolbar
-  set transparency=15
+  set guioptions-=T  " Disable toolbar
+  set transparency=5 " Transparency 5%
 endif
 
 

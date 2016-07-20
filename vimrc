@@ -128,28 +128,15 @@ set foldlevel=1         "this is just what i use
 " Colors
 """"""""""""""""""""
 set background=dark    " Dark background
-colorscheme vividchalk " Color scheme
+colorscheme gruvbox " Color scheme
 set cursorline         " Highlight current line
 set cursorcolumn       " Highlight current column
 set laststatus=2       " Show statusbar
 syn on                 " Highlight syntax
 
-" Current line color
-hi Cursor term=none cterm=none ctermfg=0 ctermbg=15 guibg=White guifg=Black
-hi CursorLine term=underline cterm=underline guibg=#333333 "Color de la linea actual
-hi CursorColumn term=underline cterm=underline ctermbg=0 ctermfg=2 guibg=#333333 "Color de la columna actual
-
-" Line number color
-hi LineNr term=none cterm=none ctermbg=0 ctermfg=7 guibg=#222222 guifg=#DDEEFF "Color de la columna de números
-
-" Autocomplete color
-hi Pmenu term=none cterm=none ctermfg=7 ctermbg=0 guibg=Gray guifg=Black
-hi PmenuSel cterm=bold ctermfg=15 ctermbg=3 gui=bold guifg=White guibg=#5555ff
-
 " GUI?
 if has("gui_running")
   set guioptions-=T        " Disable toolbar
-  set guifont=Monospace\ 8 " Font size and family
   set transparency=15
 endif
 
@@ -200,9 +187,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Plugins
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'bling/vim-airline'
+Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
@@ -211,10 +201,9 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
+Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
@@ -222,4 +211,3 @@ Plugin 'tpope/vim-pathogen'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vividchalk'

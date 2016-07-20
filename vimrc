@@ -129,6 +129,7 @@ set foldlevel=1         "this is just what i use
 """"""""""""""""""""
 set background=dark    " Dark background
 colorscheme vividchalk " Color scheme
+set transparency=15
 set cursorline         " Highlight current line
 set cursorcolumn       " Highlight current column
 set laststatus=2       " Show statusbar

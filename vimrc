@@ -116,6 +116,24 @@ map <C-l> <C-w>l
 
 
 """"""""""""""""""""
+" Make
+""""""""""""""""""""
+" F5 make
+nno <F5> :w<cr> :silent make<cr>
+ino <F5> <Esc>:w<cr>:silent make<cr>
+vno <F5> :<C-U>:w<cr>:silent make<cr>
+
+
+""""""""""""""""""""
+" under_score / CamelCase
+""""""""""""""""""""
+" F6 under_score to camelCase
+nno <F6> :%s/_\(\l\)/\u\1/gc<cr>
+" Shift F6 camelCase to under_score
+nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<cr>
+
+
+""""""""""""""""""""
 " Fold
 """"""""""""""""""""
 set foldmethod=indent   " Fold based on indent

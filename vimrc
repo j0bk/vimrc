@@ -76,7 +76,7 @@ nmap <MouseMiddle> <esc>"*p"
 
 
 """"""""""""""""""""
-" Tags
+" Auto-close
 """"""""""""""""""""
 " Close automatically
 :ino ( ()<left>
@@ -85,6 +85,13 @@ nmap <MouseMiddle> <esc>"*p"
 :ino < <><left>
 :ino " ""<left>
 :ino ' ''<left>
+
+
+""""""""""""""""""""
+" Tags
+""""""""""""""""""""
+" Auto-update tags
+au BufWritePost *.rb,*.js silent! !eval 'ctags -R {.,**}/*.{rb,js} --exclude=*.min.js -o newtags; mv newtags tags' &
 
 
 """"""""""""""""""""

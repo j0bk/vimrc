@@ -138,8 +138,7 @@ nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<cr>
 """"""""""""""""""""
 set foldmethod=indent   " Fold based on indent
 set foldnestmax=10      " Deepest fold is 10 levels
-set nofoldenable        " Dont fold by default
-set foldlevel=1         " This is just what I use
+set nofoldenable        " Don't fold by default
 
 
 """"""""""""""""""""
@@ -172,9 +171,6 @@ autocmd! bufwritepost .vimrc source ~/.vimrc"
 """"""""""""""""""""
 " Plugins
 """"""""""""""""""""
-" Coffeescript colors
-au BufNewFile,BufRead *.coffee set filetype=coffee
-
 " GitGutter
 hi clear SignColumn
 

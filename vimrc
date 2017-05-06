@@ -68,7 +68,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 
 """"""""""""""""""""
-" Funciones
+" Functions
 """"""""""""""""""""
 " Middle button pastes
 imap <MouseMiddle> <esc>"*p"
@@ -139,7 +139,7 @@ nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<cr>
 set foldmethod=indent   " Fold based on indent
 set foldnestmax=10      " Deepest fold is 10 levels
 set nofoldenable        " Dont fold by default
-set foldlevel=1         " This is just what i use
+set foldlevel=1         " This is just what I use
 
 
 """"""""""""""""""""

@@ -204,29 +204,47 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
+""""""""""""""""""""
+" Vundle
+""""""""""""""""""""
+
 " Plugins
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'aklt/plantuml-syntax'
-Plugin 'bling/vim-airline'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-pathogen'
+
+" Autocomplete
+Plugin 'Shougo/neocomplete.vim'
+
+" Snippets
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
-Plugin 'kshenoy/vim-signature'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'morhetz/gruvbox'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+
+" Git
+Plugin 'airblade/vim-gitgutter'
+
+" Syntax color
+Plugin 'aklt/plantuml-syntax'
+Plugin 'digitaltoad/vim-jade'
+
+" Syntax
+Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-pathogen'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
+
+" Debug
+Plugin 'scrooloose/syntastic'
+
+" Bar
+Plugin 'bling/vim-airline'
+
+" Show marks
+Plugin 'kshenoy/vim-signature'
+
+" Searching
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+
+" Colorscheme
+Plugin 'morhetz/gruvbox'

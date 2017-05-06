@@ -14,3 +14,7 @@ Libraries
 **ctags**
 
     sudo apt-get install exuberant-ctags
+
+    or...
+
+    brew install ctags

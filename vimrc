@@ -172,6 +172,7 @@ autocmd! bufwritepost .vimrc source ~/.vimrc"
 " Plugins
 """"""""""""""""""""
 " Airline
+set noshowmode                                    " Removes the mode duplication -- INSERT --
 let g:airline_powerline_fonts=1
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12 " Angles require Powerline fonts
 let g:airline_skip_empty_sections=1               " Remove angle at the end

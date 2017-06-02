@@ -1,3 +1,6 @@
+" Encoding
+set encoding=utf-8
+
 " Pathogen
 execute pathogen#infect()
 
@@ -178,6 +181,13 @@ autocmd! bufwritepost .vimrc source ~/.vimrc"
 """"""""""""""""""""
 " Plugins
 """"""""""""""""""""
+" Airline
+" GUI?
+if has("gui_running")
+  let g:airline_powerline_fonts = 1
+  set guifont=Source\ Code\ Pro\ for\ Powerline
+endif
+
 " GitGutter
 hi clear SignColumn
 
@@ -227,6 +237,7 @@ Plugin 'honza/vim-snippets'
 
 " Git
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 
 " Syntax color
 Plugin 'aklt/plantuml-syntax'
@@ -243,7 +254,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/syntastic'
 
 " Bar
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Show marks
 Plugin 'kshenoy/vim-signature'

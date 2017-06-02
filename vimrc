@@ -207,6 +207,9 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
+" Syntastic
+let g:syntastic_ruby_checkers = ["ruby", "rubocop"]
+
 """"""""""""""""""""
 " Vundle
 """"""""""""""""""""
@@ -234,6 +237,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rails'
 
 " Debug
 Plugin 'scrooloose/syntastic'

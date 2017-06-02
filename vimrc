@@ -30,7 +30,7 @@ set incsearch  " Incremental search
 set smartcase  " Ignore case if search is lowercase
 
 " Backups
-set nobackup      " Disable backup
+set nobackup      " Disable backups
 set nowritebackup " Disable backups
 set noswapfile    " Disable swap
 
@@ -42,13 +42,10 @@ set hidden                                    " Save undo on exit
 set history=1000                              " Command history
 set joinspaces                                " Join spaces
 set linespace=0                               " Remove spaces between lines
-set list                                      " Muestra tabs y espacios
-set listchars=tab:->,trail:-,extends:#,nbsp:. " Show tabs and spaces
 set matchpairs=(:),{:},[:],<:>                " Highlight by pairs
 set matchtime=10                              " Highlight timer
 set number                                    " Show line number
 set numberwidth=4                             " Line number max 9999
-set ruler                                     " Show cursor position
 set showcmd                                   " Show partial commands
 set showmatch                                 " Show matching key
 set undolevels=1000                           " 1000 undo
@@ -91,13 +88,6 @@ nmap <MouseMiddle> <esc>"*p"
 
 
 """"""""""""""""""""
-" Tags
-""""""""""""""""""""
-" Auto-update tags
-au BufWritePost *.rb,*.js silent! !eval 'ctags -R {.,**}/*.{rb,js} --exclude=*.min.js -o newtags; mv newtags tags' &
-
-
-""""""""""""""""""""
 " Commands
 """"""""""""""""""""
 " Common errors
@@ -135,7 +125,7 @@ vno <F5> :<C-U>:w<cr>:silent make<cr>
 
 
 """"""""""""""""""""
-" under_score / CamelCase
+" under_score / camelCase
 """"""""""""""""""""
 " F6 under_score to camelCase
 nno <F6> :%s/_\(\l\)/\u\1/gc<cr>
@@ -184,15 +174,17 @@ autocmd! bufwritepost .vimrc source ~/.vimrc"
 " Airline
 " GUI?
 if has("gui_running")
-  let g:airline_powerline_fonts = 1
-  set guifont=Source\ Code\ Pro\ for\ Powerline
+  let g:airline_powerline_fonts=1
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 endif
+let g:airline_skip_empty_sections=1 " Remove angle at the end
+let g:airline_theme='gruvbox'
 
 " GitGutter
 hi clear SignColumn
 
 " NeoComplete
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup=1
 ino <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
 ino <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 
@@ -216,9 +208,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-
-" Syntastic
-let g:syntastic_ruby_checkers = ["ruby", "rubocop"]
 
 """"""""""""""""""""
 " Vundle

@@ -172,13 +172,24 @@ autocmd! bufwritepost .vimrc source ~/.vimrc"
 " Plugins
 """"""""""""""""""""
 " Airline
-" GUI?
-if has("gui_running")
-  let g:airline_powerline_fonts=1
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h12
-endif
-let g:airline_skip_empty_sections=1 " Remove angle at the end
+let g:airline_powerline_fonts=1
+set guifont=Source\ Code\ Pro\ for\ Powerline:h12 " Angles require Powerline fonts
+let g:airline_skip_empty_sections=1               " Remove angle at the end
+let g:airline_detect_spell=0                      " Remove SPELL
 let g:airline_theme='gruvbox'
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
 
 " GitGutter
 hi clear SignColumn

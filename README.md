@@ -1,6 +1,11 @@
 vimrc
 ===
 
+Screenshot
+---
+![Screenshot](https://i.imgur.com/dVkl57e.png)
+
+
 Installation
 ---
     cd ~
@@ -11,7 +16,7 @@ Installation
 
 Libraries
 ---
-**ctags**
+**Ctags**
 
     sudo apt-get install exuberant-ctags
 

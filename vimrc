@@ -1,12 +1,10 @@
-" Encoding
-set encoding=utf-8
-
-" Pathogen
+" Pathogen (load)
 execute pathogen#infect()
 
 """"""""""""""""""""
 " Configurations
 """"""""""""""""""""
+set encoding=utf-8        " Encoding
 set spell                 " Spelling
 set spelllang=en          " Spelling languages
 set wildmenu              " Terminal autocomplete
@@ -66,14 +64,12 @@ set more                       " Enable more results
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-
 """"""""""""""""""""
 " Functions
 """"""""""""""""""""
 " Middle button pastes
 imap <MouseMiddle> <esc>"*p"
 nmap <MouseMiddle> <esc>"*p"
-
 
 """"""""""""""""""""
 " Auto-close
@@ -85,7 +81,6 @@ nmap <MouseMiddle> <esc>"*p"
 :ino < <><left>
 :ino " ""<left>
 :ino ' ''<left>
-
 
 """"""""""""""""""""
 " Commands
@@ -104,7 +99,6 @@ let g:mapleader=','    " Macros start
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
 
-
 """"""""""""""""""""
 " Movement
 """"""""""""""""""""
@@ -114,7 +108,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-
 """"""""""""""""""""
 " Make
 """"""""""""""""""""
@@ -122,7 +115,6 @@ map <C-l> <C-w>l
 nno <F5> :w<cr> :silent make<cr>
 ino <F5> <Esc>:w<cr>:silent make<cr>
 vno <F5> :<C-U>:w<cr>:silent make<cr>
-
 
 """"""""""""""""""""
 " under_score / camelCase
@@ -132,14 +124,12 @@ nno <F6> :%s/_\(\l\)/\u\1/gc<cr>
 " Shift F6 camelCase to under_score
 nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<cr>
 
-
 """"""""""""""""""""
 " Fold
 """"""""""""""""""""
 set foldmethod=indent   " Fold based on indent
 set foldnestmax=10      " Deepest fold is 10 levels
 set nofoldenable        " Don't fold by default
-
 
 """"""""""""""""""""
 " Colors
@@ -157,7 +147,6 @@ if has("gui_running")
   set transparency=5 " Transparency 5%
 endif
 
-
 """"""""""""""""""""
 " .vimrc
 """"""""""""""""""""
@@ -166,7 +155,6 @@ map <leader>v :e! ~/.vimrc<cr>"
 
 " Reopen .vimrc when saved
 autocmd! bufwritepost .vimrc source ~/.vimrc"
-
 
 """"""""""""""""""""
 " Plugins
@@ -224,7 +212,6 @@ let g:UltiSnipsEditSplit="vertical"
 """"""""""""""""""""
 " Vundle
 """"""""""""""""""""
-
 " Plugins
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-pathogen'

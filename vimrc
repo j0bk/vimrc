@@ -108,6 +108,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
 """"""""""""""""""""
 " Make
 """"""""""""""""""""
@@ -144,6 +145,9 @@ syn on                 " Highlight syntax
 " GUI?
 if has("gui_running")
   set guioptions-=T  " Disable toolbar
+  set guioptions-=R  " Disable right scrollbar
+  set guioptions-=r  " Disable right scrollbar
+  set guioptions-=L  " Disable left scrollbar
   set transparency=5 " Transparency 5%
 endif
 

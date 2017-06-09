@@ -18,23 +18,27 @@ Libraries
 ---
 **Ctags**
 
-    sudo apt-get install exuberant-ctags
-
-    or...
+Mac
 
     brew install ctags
+    
+Linux
+
+    sudo apt-get install exuberant-ctags
 
 Fonts
 ---
 **Powerline Nerd Fonts**
 
-    mkdir -p ~/.local/share/fonts
-    cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
-
-    or...
+Mac
 
     cd ~/Library/Fonts
     curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
+
+Linux
+
+    mkdir -p ~/.local/share/fonts
+    cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
 
 Common errors
 ---

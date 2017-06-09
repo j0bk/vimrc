@@ -44,6 +44,7 @@ set matchpairs=(:),{:},[:],<:>                " Highlight by pairs
 set matchtime=10                              " Highlight timer
 set number                                    " Show line number
 set numberwidth=4                             " Line number max 9999
+set relativenumber                            " Show relative line numbers
 set showcmd                                   " Show partial commands
 set showmatch                                 " Show matching key
 set undolevels=1000                           " 1000 undo
@@ -107,7 +108,6 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
 """"""""""""""""""""
 " Make
 """"""""""""""""""""
@@ -183,6 +183,7 @@ Plugin 'aklt/plantuml-syntax'
 Plugin 'digitaltoad/vim-jade'
 
 " Syntax
+Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'

@@ -4,7 +4,7 @@ execute pathogen#infect()
 """"""""""""""""""""
 " Configurations
 """"""""""""""""""""
-set encoding=utf-8        " Encoding
+set encoding=utf8         " Encoding
 set spell                 " Spelling
 set spelllang=en          " Spelling languages
 set wildmenu              " Terminal autocomplete
@@ -157,61 +157,12 @@ map <leader>v :e! ~/.vimrc<cr>"
 autocmd! bufwritepost .vimrc source ~/.vimrc"
 
 """"""""""""""""""""
-" Plugins
+" Vundle
 """"""""""""""""""""
-" Airline
-set noshowmode                                    " Removes the mode duplication -- INSERT --
-let g:airline_powerline_fonts=1
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12 " Angles require Powerline fonts
-let g:airline_skip_empty_sections=1               " Remove angle at the end
-let g:airline_detect_spell=0                      " Remove SPELL
-let g:airline_theme='gruvbox'
-let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V',
-    \ '' : 'V',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
-
-" GitGutter
-hi clear SignColumn
-
-" NeoComplete
-let g:neocomplete#enable_at_startup=1
-ino <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
-ino <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
-
-" NERDTree
-nno <tab> :NERDTreeToggle<cr>
-
-" Tabularize
-vno <tab> :Tabularize<cr>
-vno <C-tab> :Tabularize /=<cr>
-vno <S-tab> :Tabularize /:<cr>
-
-" Tagbar
-nno <F2> :Tagbar<cr>
-
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
-
-""""""""""""""""""""
-" Vundle
-""""""""""""""""""""
 " Plugins
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-pathogen'
@@ -249,9 +200,63 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kshenoy/vim-signature'
 
 " Searching
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
+
+" Icons
+Plugin 'ryanoasis/vim-devicons'
+
+""""""""""""""""""""
+" Plugins
+""""""""""""""""""""
+" Airline
+set noshowmode                                    " Removes the mode duplication -- INSERT --
+let g:airline_powerline_fonts=1
+let g:airline_skip_empty_sections=1               " Remove angle at the end
+let g:airline_detect_spell=0                      " Remove SPELL
+let g:airline_theme='gruvbox'
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
+
+" DevIcons
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
+
+" GitGutter
+hi clear SignColumn
+
+" NeoComplete
+let g:neocomplete#enable_at_startup=1
+ino <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
+ino <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
+
+" NERDTree
+nno <tab> :NERDTreeToggle<cr>
+
+" Tabularize
+vno <tab> :Tabularize<cr>
+vno <C-tab> :Tabularize /=<cr>
+vno <S-tab> :Tabularize /:<cr>
+
+" Tagbar
+nno <F2> :Tagbar<cr>
+
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"

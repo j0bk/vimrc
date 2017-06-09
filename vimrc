@@ -214,6 +214,7 @@ Plugin 'ryanoasis/vim-devicons'
 " Plugins
 """"""""""""""""""""
 " Airline
+let g:airline#extensions#tabline#enabled = 1      " Tabline
 set noshowmode                                    " Removes the mode duplication -- INSERT --
 let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1               " Remove angle at the end

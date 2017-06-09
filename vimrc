@@ -118,7 +118,7 @@ ino <F5> <Esc>:w<cr>:silent make<cr>
 vno <F5> :<C-U>:w<cr>:silent make<cr>
 
 """"""""""""""""""""
-" under_score / camelCase
+" Toggle cases
 """"""""""""""""""""
 " F6 under_score to camelCase
 nno <F6> :%s/_\(\l\)/\u\1/gc<cr>

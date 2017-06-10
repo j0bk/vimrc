@@ -3,7 +3,7 @@ vimrc
 
 Screenshot
 ---
-![Screenshot](https://i.imgur.com/ENlMeH8.png)
+![Screenshot](https://i.imgur.com/uqxhk3N.png)
 
 
 Installation
@@ -21,7 +21,7 @@ Libraries
 Mac
 
     brew install ctags
-    
+
 Linux
 
     sudo apt-get install exuberant-ctags

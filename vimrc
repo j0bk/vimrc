@@ -63,7 +63,7 @@ set backspace=indent,eol,start " Flexible erasing
 set more                       " Enable more results
 
 " Remove trailing spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
+au BufWritePre * :%s/\s\+$//e
 
 """"""""""""""""""""
 " Functions
@@ -142,7 +142,6 @@ set cursorcolumn       " Highlight current column
 set laststatus=2       " Show statusbar
 syn on                 " Highlight syntax
 
-" GUI?
 if has("gui_running")
   set guioptions-=T  " Disable toolbar
   set guioptions-=R  " Disable right scrollbar
@@ -158,7 +157,7 @@ endif
 map <leader>v :e! ~/.vimrc<cr>"
 
 " Reopen .vimrc when saved
-autocmd! bufwritepost .vimrc source ~/.vimrc"
+au! bufwritepost .vimrc source ~/.vimrc"
 
 """"""""""""""""""""
 " Vundle
@@ -219,13 +218,16 @@ Plugin 'ryanoasis/vim-devicons'
 " Plugins
 """"""""""""""""""""
 " Airline
-let g:airline#extensions#tabline#enabled = 1      " Tabline
-set noshowmode                                    " Removes the mode duplication -- INSERT --
+if !has("gui_running")
+  let g:airline#extensions#tabline#enabled=1 " Tabline
+endif
+
+set noshowmode                               " Removes the mode duplication -- INSERT --
 let g:airline_powerline_fonts=1
-let g:airline_skip_empty_sections=1               " Remove angle at the end
-let g:airline_detect_spell=0                      " Remove SPELL
+let g:airline_skip_empty_sections=1          " Remove angle at the end
+let g:airline_detect_spell=0                 " Remove SPELL
 let g:airline_theme='gruvbox'
-let g:airline_mode_map = {
+let g:airline_mode_map={
     \ '__' : '-',
     \ 'n'  : 'N',
     \ 'i'  : 'I',
@@ -240,7 +242,9 @@ let g:airline_mode_map = {
     \ }
 
 " DevIcons
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
+if has("gui_running")
+  set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
+endif
 
 " GitGutter
 hi clear SignColumn
@@ -252,6 +256,9 @@ ino <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 
 " NERDTree
 nno <tab> :NERDTreeToggle<cr>
+au VimEnter *  NERDTree
+let NERDTreeMinimalUI=1
+
 
 " Tabularize
 vno <tab> :Tabularize<cr>
@@ -260,6 +267,8 @@ vno <S-tab> :Tabularize /:<cr>
 
 " Tagbar
 nno <F2> :Tagbar<cr>
+let g:tagbar_compact=1
+let g:tagbar_indent=0
 
 " Snippets
 let g:UltiSnipsExpandTrigger="<tab>"

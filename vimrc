@@ -212,6 +212,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 
 " Icons
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 
 """"""""""""""""""""

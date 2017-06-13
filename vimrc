@@ -246,6 +246,8 @@ let g:airline_mode_map={
 if has("gui_running")
   set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
 endif
+" Refresh when reload vimrc
+au bufwritepost .vimrc call webdevicons#refresh()
 
 " GitGutter
 hi clear SignColumn
@@ -276,3 +278,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
+" Syntastic
+highlight SyntasticErrorLine guibg=#4C1C14
+highlight SyntasticWarningLine guibg=#4B3F15

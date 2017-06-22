@@ -4,7 +4,6 @@ execute pathogen#infect()
 """"""""""""""""""""
 " Configurations
 """"""""""""""""""""
-set nocompatible
 set encoding=utf8         " Encoding
 set spell                 " Spelling
 set spelllang=en          " Spelling languages

@@ -3,7 +3,7 @@ vimrc
 
 Screenshot
 ---
-![Screenshot](https://i.imgur.com/0OrTSjn.png)
+![Screenshot](https://i.imgur.com/Zqz3toU.png)
 
 
 Installation

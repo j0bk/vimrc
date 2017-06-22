@@ -4,6 +4,7 @@ execute pathogen#infect()
 """"""""""""""""""""
 " Configurations
 """"""""""""""""""""
+set nocompatible
 set encoding=utf8         " Encoding
 set spell                 " Spelling
 set spelllang=en          " Spelling languages
@@ -186,19 +187,15 @@ Plugin 'aklt/plantuml-syntax'
 Plugin 'digitaltoad/vim-jade'
 
 " Syntax
-Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rails'
 
 " Debug
 Plugin 'scrooloose/syntastic'
 
 " Bar
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 " Show marks
 Plugin 'kshenoy/vim-signature'
@@ -219,9 +216,12 @@ Plugin 'ryanoasis/vim-devicons'
 " Plugins
 """"""""""""""""""""
 " Airline
-if !has("gui_running")
-  let g:airline#extensions#tabline#enabled=1 " Tabline
-endif
+let g:airline#extensions#tabline#enabled=1         " Tabline
+let g:airline#extensions#tabline#show_buffers=0    " Disable buffers
+let g:airline#extensions#tabline#show_splits=0     " Disable buffers
+let g:airline#extensions#tabline#show_tabs=1
+let g:airline#extensions#tabline#show_tab_type = 0 " Hide right tab indicator
+let g:airline#extensions#tabline#show_close_button = 0
 
 set noshowmode                               " Removes the mode duplication -- INSERT --
 let g:airline_powerline_fonts=1
@@ -246,8 +246,7 @@ let g:airline_mode_map={
 if has("gui_running")
   set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
 endif
-" Refresh when reload vimrc
-au bufwritepost .vimrc call webdevicons#refresh()
+au! bufwritepost .vimrc call webdevicons#hardRefresh()
 
 " GitGutter
 hi clear SignColumn
@@ -259,7 +258,6 @@ ino <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 
 " NERDTree
 nno <tab> :NERDTreeToggle<cr>
-au VimEnter *  NERDTree
 let NERDTreeMinimalUI=1
 
 

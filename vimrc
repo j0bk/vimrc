@@ -92,7 +92,6 @@ nmap <MouseMiddle> <esc>"*p"
 :command! W w
 :command! Q q
 nore ; :
-nore , :
 let maplocalleader=',' " Macros start
 let mapleader=','      " Macros start
 let g:mapleader=','    " Macros start
@@ -173,13 +172,8 @@ Plugin 'tpope/vim-pathogen'
 " Autocomplete
 Plugin 'Shougo/neocomplete.vim'
 
-" Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-
 " Git
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
 
 " Syntax color
 Plugin 'aklt/plantuml-syntax'
@@ -241,6 +235,9 @@ let g:airline_mode_map={
     \ '' : 'S',
     \ }
 
+" CtrlP
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
+
 " DevIcons
 if has("gui_running")
   set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
@@ -259,7 +256,6 @@ ino <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 nno <tab> :NERDTreeToggle<cr>
 let NERDTreeMinimalUI=1
 
-
 " Tabularize
 vno <tab> :Tabularize<cr>
 vno <C-tab> :Tabularize /=<cr>
@@ -269,12 +265,6 @@ vno <S-tab> :Tabularize /:<cr>
 nno <F2> :Tagbar<cr>
 let g:tagbar_compact=1
 let g:tagbar_indent=0
-
-" Snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 
 " Syntastic
 highlight SyntasticErrorLine guibg=#4C1C14

@@ -174,6 +174,7 @@ Plugin 'Shougo/neocomplete.vim'
 
 " Git
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 
 " Syntax color
 Plugin 'aklt/plantuml-syntax'
@@ -204,6 +205,8 @@ Plugin 'morhetz/gruvbox'
 " Icons
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
+
+call vundle#end()
 
 """"""""""""""""""""
 " Plugins

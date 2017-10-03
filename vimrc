@@ -12,10 +12,10 @@ set wildmode=list:longest " Long terminal autocomplete
 
 " Indentation
 filetype plugin indent on " File type indentation
-set autoindent            " Automatic indentation
-set copyindent            " Copy last indentation
+set autoindent
+set copyindent
 set expandtab             " Spaces instead of tabs
-set preserveindent        " Preserve indentation
+set preserveindent
 set shiftwidth=2          " 2 spaces by indent
 set smartindent           " Tabs and spaces are the same
 set smarttab              " Start indentation based on the start of the line
@@ -27,10 +27,13 @@ set ignorecase " Ignore case sensitive
 set incsearch  " Incremental search
 set smartcase  " Ignore case if search is lowercase
 
-" Backups
-set nobackup      " Disable backups
-set nowritebackup " Disable backups
-set noswapfile    " Disable swap
+" Backup
+set backupdir^=~/.vim/.backup//
+set backup
+
+" Swap
+set directory^=~/.vim/.swap//
+set swapfile
 
 " Edition
 set autoread                                  " Auto-reload on change

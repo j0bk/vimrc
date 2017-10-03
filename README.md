@@ -12,6 +12,8 @@ Installation
     git clone git://github.com/juancolacelli/vimrc.git
     mv vimrc .vim
     ln -s .vim/vimrc .vimrc
+    mkdir .vim/.backup
+    mkdir .vim/.swap
     vim +PluginInstall +qall
 
 Libraries

@@ -1,9 +1,13 @@
-" Pathogen (load)
-execute pathogen#infect()
+""""""""""""""""""""
+" Vim configuration
+""""""""""""""""""""
+" Source: https://github.com/juancolacelli/vimrc
+" Maintainer: Juan Colacelli <https://juan.colacelli.com>
 
 """"""""""""""""""""
-" Configurations
+" General
 """"""""""""""""""""
+set nocompatible
 set encoding=utf8         " Encoding
 set spell                 " Spelling
 set spelllang=en          " Spelling languages
@@ -162,54 +166,49 @@ map <leader>v :e! ~/.vimrc<cr>"
 au! bufwritepost .vimrc source ~/.vimrc"
 
 """"""""""""""""""""
-" Vundle
+" Minpac (packages)
 """"""""""""""""""""
-" Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if exists('*minpac#init')
+  call minpac#init()
 
-" Plugins
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-pathogen'
+  " Autocomplete
+  call minpac#add('Shougo/neocomplete.vim')
 
-" Autocomplete
-Plugin 'Shougo/neocomplete.vim'
+  " Git
+  call minpac#add('airblade/vim-gitgutter')
+  call minpac#add('tpope/vim-fugitive')
 
-" Git
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
+  " Syntax color
+  call minpac#add('aklt/plantuml-syntax')
+  call minpac#add('digitaltoad/vim-jade')
 
-" Syntax color
-Plugin 'aklt/plantuml-syntax'
-Plugin 'digitaltoad/vim-jade'
+  " Syntax
+  call minpac#add('godlygeek/tabular')
+  call minpac#add('tpope/vim-commentary')
+  call minpac#add('tpope/vim-endwise')
+  call minpac#add('tpope/vim-surround')
 
-" Syntax
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
+  " Debug
+  call minpac#add('scrooloose/syntastic')
 
-" Debug
-Plugin 'scrooloose/syntastic'
+  " Bar
+  call minpac#add('vim-airline/vim-airline')
 
-" Bar
-Plugin 'vim-airline/vim-airline'
+  " Show marks
+  call minpac#add('kshenoy/vim-signature')
 
-" Show marks
-Plugin 'kshenoy/vim-signature'
+  " Searching
+  call minpac#add('ctrlpvim/ctrlp.vim')
+  call minpac#add('majutsushi/tagbar')
+  call minpac#add('scrooloose/nerdtree')
 
-" Searching
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
+  " Colorscheme
+  call minpac#add('morhetz/gruvbox')
 
-" Colorscheme
-Plugin 'morhetz/gruvbox'
-
-" Icons
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'ryanoasis/vim-devicons'
-
-call vundle#end()
+  " Icons
+  call minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
+  call minpac#add('ryanoasis/vim-devicons')
+endif
 
 """"""""""""""""""""
 " Plugins

@@ -7,67 +7,67 @@
 """"""""""""""""""""
 " General
 """"""""""""""""""""
-set nocompatible
-set encoding=utf8         " Encoding
-set spell                 " Spelling
-set spelllang=en          " Spelling languages
-set wildmenu              " Terminal autocomplete
-set wildmode=list:longest " Long terminal autocomplete
+se nocp             " No compatible
+se enc=utf8         " Encoding
+se spell            " Spelling
+se spl=en           " Spelling languages
+se wmnu             " Terminal autocomplete
+se wim=list:longest " Long terminal autocomplete
 
 " Indentation
 filetype plugin indent on " File type indentation
-set autoindent
-set copyindent
-set expandtab             " Spaces instead of tabs
-set preserveindent
-set shiftwidth=2          " 2 spaces by indent
-set smartindent           " Tabs and spaces are the same
-set smarttab              " Start indentation based on the start of the line
-set tabstop=2             " 2 spaces by tab
+se shiftwidth=2           " 2 spaces by indent
+se ts=2                   " 2 spaces by tab
+se ai  " Auto indent
+se ci  " Copy indent
+se et  " Spaces instead of tabs
+se pi  " Preserve indent
+se si  " Tabs and spaces are the same
+se sta " Start indentation based on the start of the line
 
 " Search
-set hlsearch   " Highlight current search
-set ignorecase " Ignore case sensitive
-set incsearch  " Incremental search
-set smartcase  " Ignore case if search is lowercase
+se hls " Highlight current search
+se ic  " Ignore case sensitive
+se is  " Incremental search
+se scs " Ignore case if search is lowercase
 
 " Backup
-set backupdir^=~/.vim/.backup//
-set backup
+se bdir^=~/.vim/.backup//
+se backup
 
 " Swap
-set directory^=~/.vim/.swap//
-set swapfile
+se dir^=~/.vim/.swap//
+se swf
 
 " Edition
-set autoread                                  " Auto-reload on change
-set confirm                                   " Confirm changes on exit
-set colorcolumn=80                            " Right margin
-set hidden                                    " Save undo on exit
-set history=1000                              " Command history
-set joinspaces                                " Join spaces
-set linespace=0                               " Remove spaces between lines
-set matchpairs=(:),{:},[:],<:>                " Highlight by pairs
-set matchtime=10                              " Highlight timer
-set number                                    " Show line number
-set numberwidth=4                             " Line number max 9999
-set relativenumber                            " Show relative line numbers
-set showcmd                                   " Show partial commands
-set showmatch                                 " Show matching key
-set undolevels=1000                           " 1000 undo
-set wrap                                      " Cut lines if they exceed right margin
+se ar  " Auto-reload on change
+se hid " Save undo on exit
+se js  " Join spaces
+se nu  " Show line number
+se rnu " Show relative line numbers
+se sc  " Show partial commands
+se sm  " Show matching key
+se confirm " Confirm changes on exit
+se wrap    " Cut lines if they exceed right margin
+se cuc=80              " Right margin
+se history=1000        " Command history
+se lsp=0               " Remove spaces between lines
+se mat=10              " Highlight timer
+se mps=(:),{:},[:],<:> " Highlight by pairs
+se nuw=4               " Line number max 9999
+se ul=1000             " 1000 undo
 
 " Beep
-set noerrorbells " Visual bell
-set visualbell   " Visual bell
+se noeb " Visual bell
+se vb   " Visual bell
 
 " Mouse
-set mouse=a   " Mouse enabled
-set mousehide " Hide mouse when writing
+se mouse=a " Mouse enabled
+se mh      " Hide mouse when writing
 
 " General
-set backspace=indent,eol,start " Flexible erasing
-set more                       " Enable more results
+se backspace=indent,eol,start " Flexible erasing
+se more                       " Enable more results
 
 " Remove trailing spaces on save
 au BufWritePre * :%s/\s\+$//e
@@ -76,35 +76,35 @@ au BufWritePre * :%s/\s\+$//e
 " Functions
 """"""""""""""""""""
 " Middle button pastes
-imap <MouseMiddle> <esc>"*p"
-nmap <MouseMiddle> <esc>"*p"
+im <MouseMiddle> <esc>"*p"
+nm <MouseMiddle> <esc>"*p"
 
 """"""""""""""""""""
 " Auto-close
 """"""""""""""""""""
 " Close automatically
-:ino ( ()<left>
-:ino { {}<left>
-:ino [ []<left>
-:ino < <><left>
-:ino " ""<left>
-:ino ' ''<left>
+ino ( ()<left>
+ino { {}<left>
+ino [ []<left>
+ino < <><left>
+ino " ""<left>
+ino ' ''<left>
 
 """"""""""""""""""""
 " Commands
 """"""""""""""""""""
 " Common errors
-:command! WQ wq
-:command! Wq wq
-:command! W w
-:command! Q q
-nore ; :
+com! WQ wq
+com! Wq wq
+com! W w
+com! Q q
+no ; :
 let maplocalleader=',' " Macros start
 let mapleader=','      " Macros start
 let g:mapleader=','    " Macros start
 
 " Save with sudo
-cmap w!! w !sudo tee % >/dev/null
+cm w!! w !sudo tee % >/dev/null
 
 """"""""""""""""""""
 " Movement
@@ -134,26 +134,26 @@ nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<cr>
 """"""""""""""""""""
 " Fold
 """"""""""""""""""""
-set foldmethod=indent   " Fold based on indent
-set foldnestmax=10      " Deepest fold is 10 levels
-set nofoldenable        " Don't fold by default
+se fdm=indent " Fold based on indent
+se fdn=10     " Deepest fold is 10 levels
+se nofen      " Don't fold by default
 
 """"""""""""""""""""
 " Colors
 """"""""""""""""""""
-set background=dark    " Dark background
-colorscheme gruvbox    " Color scheme
-set cursorline         " Highlight current line
-set cursorcolumn       " Highlight current column
-set laststatus=2       " Show statusbar
-syn on                 " Highlight syntax
+syn on " Highlight syntax
+se cul " Highlight current line
+se cuc " Highlight current column
+se background=dark " Dark background
+colo gruvbox       " Color scheme
+se ls=2            " Show statusbar
 
 if has("gui_running")
-  set guioptions-=T  " Disable toolbar
-  set guioptions-=R  " Disable right scrollbar
-  set guioptions-=r  " Disable right scrollbar
-  set guioptions-=L  " Disable left scrollbar
-  set transparency=5 " Transparency 5%
+  se go-=T  " Disable toolbar
+  se go-=R  " Disable right scrollbar
+  se go-=r  " Disable right scrollbar
+  se go-=L  " Disable left scrollbar
+  se transparency=5 " Transparency 5%
 endif
 
 """"""""""""""""""""
@@ -163,51 +163,51 @@ endif
 map <leader>v :e! ~/.vimrc<cr>"
 
 " Reopen .vimrc when saved
-au! bufwritepost .vimrc source ~/.vimrc"
+au! bufwritepost .vimrc so ~/.vimrc"
 
 """"""""""""""""""""
 " Minpac (packages)
 """"""""""""""""""""
 if exists('*minpac#init')
-  call minpac#init()
+  cal minpac#init()
 
   " Autocomplete
-  call minpac#add('Shougo/neocomplete.vim')
+  cal minpac#add('Shougo/neocomplete.vim')
 
   " Git
-  call minpac#add('airblade/vim-gitgutter')
-  call minpac#add('tpope/vim-fugitive')
+  cal minpac#add('airblade/vim-gitgutter')
+  cal minpac#add('tpope/vim-fugitive')
 
   " Syntax color
-  call minpac#add('aklt/plantuml-syntax')
-  call minpac#add('digitaltoad/vim-jade')
+  cal minpac#add('aklt/plantuml-syntax')
+  cal minpac#add('digitaltoad/vim-jade')
 
   " Syntax
-  call minpac#add('godlygeek/tabular')
-  call minpac#add('tpope/vim-commentary')
-  call minpac#add('tpope/vim-endwise')
-  call minpac#add('tpope/vim-surround')
+  cal minpac#add('godlygeek/tabular')
+  cal minpac#add('tpope/vim-commentary')
+  cal minpac#add('tpope/vim-endwise')
+  cal minpac#add('tpope/vim-surround')
 
   " Debug
-  call minpac#add('scrooloose/syntastic')
+  cal minpac#add('scrooloose/syntastic')
 
   " Bar
-  call minpac#add('vim-airline/vim-airline')
+  cal minpac#add('vim-airline/vim-airline')
 
   " Show marks
-  call minpac#add('kshenoy/vim-signature')
+  cal minpac#add('kshenoy/vim-signature')
 
   " Searching
-  call minpac#add('ctrlpvim/ctrlp.vim')
-  call minpac#add('majutsushi/tagbar')
-  call minpac#add('scrooloose/nerdtree')
+  cal minpac#add('ctrlpvim/ctrlp.vim')
+  cal minpac#add('majutsushi/tagbar')
+  cal minpac#add('scrooloose/nerdtree')
 
   " Colorscheme
-  call minpac#add('morhetz/gruvbox')
+  cal minpac#add('morhetz/gruvbox')
 
   " Icons
-  call minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
-  call minpac#add('ryanoasis/vim-devicons')
+  cal minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
+  cal minpac#add('ryanoasis/vim-devicons')
 endif
 
 """"""""""""""""""""
@@ -221,7 +221,7 @@ let g:airline#extensions#tabline#show_tabs=1
 let g:airline#extensions#tabline#show_tab_type = 0 " Hide right tab indicator
 let g:airline#extensions#tabline#show_close_button = 0
 
-set noshowmode                               " Removes the mode duplication -- INSERT --
+se nosmd                                     " Removes the mode duplication -- INSERT --
 let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1          " Remove angle at the end
 let g:airline_detect_spell=0                 " Remove SPELL
@@ -241,13 +241,13 @@ let g:airline_mode_map={
     \ }
 
 " CtrlP
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
 
 " DevIcons
 if has("gui_running")
-  set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
+  se gfn=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
 endif
-au! bufwritepost .vimrc call webdevicons#hardRefresh()
+au! bufwritepost .vimrc cal webdevicons#hardRefresh()
 
 " GitGutter
 hi clear SignColumn
@@ -272,5 +272,5 @@ let g:tagbar_compact=1
 let g:tagbar_indent=0
 
 " Syntastic
-highlight SyntasticErrorLine guibg=#4C1C14
-highlight SyntasticWarningLine guibg=#4B3F15
+hi SyntasticErrorLine guibg=#4C1C14
+hi SyntasticWarningLine guibg=#4B3F15

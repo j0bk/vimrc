@@ -8,46 +8,50 @@ Screenshot
 
 Installation
 ---
+**Warning!: Backup your ~/.vim folder and ~/.vimrc file before running the following commands**
+
+Linux / Mac
+
     cd ~
     git clone git://github.com/juancolacelli/vimrc.git
-    mv vimrc .vim && cd .vim
-    ln -s vimrc ../.vimrc
+    mv vimrc .vim
+    ln -s ~/.vim/vimrc .vimrc
 
-    mkdir -p .backup .swap pack/minpac/opt
-    cd pack/minpac/opt
+    mkdir -p ~/.vim/.backup ~/.vim/.swap ~/.vim/pack/minpac/opt
+    cd ~/.vim/pack/minpac/opt
     git clone https://github.com/k-takata/minpac.git
 
     vim
-    :packadd minpac
-    :source ~/.vimrc
-    :call minpac#update()
+    :pa minpac
+    :so ~/.vimrc
+    :cal minpac#update()
     :q
 
 Libraries
 ---
 **Ctags**
 
-Mac
-
-    brew install ctags
-
 Linux
 
     sudo apt-get install exuberant-ctags
+
+Mac
+
+    brew install ctags
 
 Fonts
 ---
 **Powerline Nerd Fonts**
 
-Mac
-
-    cd ~/Library/Fonts
-    curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
-
 Linux
 
     mkdir -p ~/.local/share/fonts
     cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
+
+Mac
+
+    cd ~/Library/Fonts
+    curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
 
 Common errors
 ---

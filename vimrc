@@ -1,8 +1,8 @@
 """"""""""""""""""""
-" Vim configuration
+" Juan Colacelli's vimrc
 """"""""""""""""""""
 " Source: https://github.com/juancolacelli/vimrc
-" Maintainer: Juan Colacelli <https://juan.colacelli.com>
+" Maintainer: Juan Colacelli <http://juan.colacelli.com>
 
 """"""""""""""""""""
 " General

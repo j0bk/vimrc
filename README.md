@@ -1,4 +1,4 @@
-vimrc
+Juan Colacelli's vimrc
 ===
 
 Screenshot

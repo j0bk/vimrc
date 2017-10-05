@@ -49,7 +49,7 @@ se sc  " Show partial commands
 se sm  " Show matching key
 se confirm " Confirm changes on exit
 se wrap    " Cut lines if they exceed right margin
-se cuc=80              " Right margin
+se cc=80               " Right margin
 se history=1000        " Command history
 se lsp=0               " Remove spaces between lines
 se mat=10              " Highlight timer

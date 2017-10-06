@@ -160,14 +160,17 @@ endif
 " .vimrc
 """"""""""""""""""""
 " Open .vimrc
-map <leader>v :e! ~/.vimrc<cr>"
+map <leader>v :e! $MYVIMRC<cr>"
 
 " Reopen .vimrc when saved
-au! bufwritepost .vimrc so ~/.vimrc"
+au! bufwritepost .vimrc so $MYVIMRC
 
 """"""""""""""""""""
 " Minpac (packages)
 """"""""""""""""""""
+com! PackUpdate pa minpac | so $MYVIMRC | cal minpac#update()
+com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
+
 if exists('*minpac#init')
   cal minpac#init()
 

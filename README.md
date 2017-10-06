@@ -22,10 +22,7 @@ Linux / Mac
     git clone https://github.com/k-takata/minpac.git
 
     vim
-    :pa minpac
-    :so ~/.vimrc
-    :cal minpac#update()
-    :q
+    :PackUpdate
 
 Libraries
 ---

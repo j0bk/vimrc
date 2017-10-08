@@ -1,13 +1,20 @@
 Juan Colacelli's vimrc
 ===
 
+- [Screenshot](#screenshot)
+- [Installation](#installation)
+- [Dependencies](#dependencies)
+- [Packages](#packages)
+- [Common errors](#common-errors)
+
 Screenshot
 ---
-![Screenshot](https://i.imgur.com/Zqz3toU.png)
 
+![Screenshot](https://i.imgur.com/Zqz3toU.png)
 
 Installation
 ---
+
 **Warning!: Backup your ~/.vim folder and ~/.vimrc file before running the following commands**
 
 Linux / Mac
@@ -26,6 +33,7 @@ Linux / Mac
 
 Dependencies
 ---
+
 **Ctags**
 
 Linux
@@ -50,6 +58,7 @@ Mac
 
 Packages
 ---
+
 - [commentary.vim](https://github.com/tpope/vim-commentary)
 - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 - [endwise.vim](https://github.com/tpope/vim-endwise)
@@ -75,6 +84,7 @@ Packages
 
 Common errors
 ---
+
 **Icons shown in half**
 
 If you are using MacVim go to Preferences > Advanced and uncheck Use Core Text renderer

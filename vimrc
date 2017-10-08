@@ -178,7 +178,7 @@ if exists('*minpac#init')
   cal minpac#add('Shougo/neocomplete.vim')
 
   " Git
-  cal minpac#add('airblade/vim-gitgutter')
+  cal minpac#add('mhinz/vim-signify')
   cal minpac#add('tpope/vim-fugitive')
 
   " Syntax color
@@ -202,11 +202,15 @@ if exists('*minpac#init')
 
   " Searching
   cal minpac#add('ctrlpvim/ctrlp.vim')
+  cal minpac#add('farmergreg/vim-lastplace')
   cal minpac#add('majutsushi/tagbar')
   cal minpac#add('scrooloose/nerdtree')
 
   " Colorscheme
   cal minpac#add('morhetz/gruvbox')
+
+  " Start screen
+  cal minpac#add('mhinz/vim-startify')
 
   " Icons
   cal minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
@@ -252,9 +256,6 @@ if has("gui_running")
 endif
 au! bufwritepost .vimrc cal webdevicons#hardRefresh()
 
-" GitGutter
-hi clear SignColumn
-
 " NeoComplete
 let g:neocomplete#enable_at_startup=1
 ino <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
@@ -263,6 +264,9 @@ ino <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 " NERDTree
 nno <tab> :NERDTreeToggle<cr>
 let NERDTreeMinimalUI=1
+
+" Signify
+let g:signify_line_highlight=1
 
 " Tabularize
 vno <tab> :Tabularize<cr>

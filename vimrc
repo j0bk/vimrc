@@ -181,6 +181,9 @@ if exists('*minpac#init')
   cal minpac#add('mhinz/vim-signify')
   cal minpac#add('tpope/vim-fugitive')
 
+  " HTML
+  cal minpac#add('Valloric/MatchTagAlways')
+
   " Syntax color
   cal minpac#add('aklt/plantuml-syntax')
   cal minpac#add('digitaltoad/vim-jade')

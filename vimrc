@@ -175,7 +175,12 @@ if exists('*minpac#init')
   cal minpac#init()
 
   " Autocomplete
-  cal minpac#add('Shougo/neocomplete.vim')
+  cal minpac#add('Shougo/neocomplete')
+
+  " Snippets
+  cal minpac#add('honza/vim-snippets')
+  cal minpac#add('Shougo/neosnippet')
+  cal minpac#add('Shougo/neosnippet-snippets')
 
   " Git
   cal minpac#add('mhinz/vim-signify')
@@ -187,6 +192,7 @@ if exists('*minpac#init')
   " Syntax color
   cal minpac#add('aklt/plantuml-syntax')
   cal minpac#add('digitaltoad/vim-jade')
+  cal minpac#add('posva/vim-vue')
 
   " Syntax
   cal minpac#add('godlygeek/tabular')
@@ -261,8 +267,13 @@ au! bufwritepost .vimrc cal webdevicons#hardRefresh()
 
 " NeoComplete
 let g:neocomplete#enable_at_startup=1
-ino <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
-ino <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
+
+" NeoSnippet
+let g:neosnippet#snippets_directory='$HOME/.vim/pack/minpac/start/vim-snippets/snippets/'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
 
 " NERDTree
 nno <tab> :NERDTreeToggle<cr>

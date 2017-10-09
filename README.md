@@ -67,6 +67,8 @@ Packages
 - [MatchTagAlways.vim](https://github.com/Valloric/MatchTagAlways)
 - [minpac](https://github.com/Shougok-takata/minpac)
 - [neocomplete](https://github.com/Shougo/neocomplete.vim)
+- [Neosnippet](https://github.com/Shougo/neosnippet.vim)
+- [Neosnippet-snippets](https://github.com/Shougo/neosnippet-snippets.vim)
 - [NERDTree](https://github.com/scrooloose/nerdtree)
 - [PlantUML Syntax](https://github.com/aklt/plantuml-syntax)
 - [Signify](https://github.com/mhinz/vim-signify)
@@ -81,6 +83,8 @@ Packages
 - [vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
 - [vim-pug](https://github.com/digitaltoad/vim-pug)
 - [vim-signature](https://github.com/kshenoy/vim-signature)
+- [vim-snippets](https://github.com/honza/vim-snippets)
+- [vim-vue](https://github.com/posva/vim-vue)
 
 Common errors
 ---

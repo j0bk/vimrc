@@ -173,6 +173,8 @@ com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
 
 if exists('*minpac#init')
   cal minpac#init()
+  " Minpac auto-update
+  cal minpac#add('k-takata/minpac', {'type': 'opt'})
 
   " Autocomplete
   cal minpac#add('Shougo/neocomplete')

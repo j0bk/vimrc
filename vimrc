@@ -145,7 +145,6 @@ syn on " Highlight syntax
 se cul " Highlight current line
 se cuc " Highlight current column
 se background=dark " Dark background
-colo gruvbox       " Color scheme
 se ls=2            " Show statusbar
 
 if has("gui_running")
@@ -153,7 +152,6 @@ if has("gui_running")
   se go-=R  " Disable right scrollbar
   se go-=r  " Disable right scrollbar
   se go-=L  " Disable left scrollbar
-  se transparency=5 " Transparency 5%
 endif
 
 """"""""""""""""""""
@@ -173,7 +171,8 @@ com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
 
 if exists('*minpac#init')
   cal minpac#init()
-  " Minpac auto-update
+
+  " Minpac self-update
   cal minpac#add('k-takata/minpac', {'type': 'opt'})
 
   " Autocomplete
@@ -267,6 +266,9 @@ if has("gui_running")
 endif
 au! bufwritepost .vimrc cal webdevicons#hardRefresh()
 
+" Gruvbox
+colo gruvbox
+
 " NeoComplete
 let g:neocomplete#enable_at_startup=1
 
@@ -276,13 +278,13 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-
 " NERDTree
 nno <tab> :NERDTreeToggle<cr>
 let NERDTreeMinimalUI=1
 
-" Signify
-let g:signify_line_highlight=1
+" Syntastic
+hi SyntasticErrorLine guibg=#4C1C14
+hi SyntasticWarningLine guibg=#4B3F15
 
 " Tabularize
 vno <tab> :Tabularize<cr>
@@ -293,7 +295,3 @@ vno <S-tab> :Tabularize /:<cr>
 nno <F2> :Tagbar<cr>
 let g:tagbar_compact=1
 let g:tagbar_indent=0
-
-" Syntastic
-hi SyntasticErrorLine guibg=#4C1C14
-hi SyntasticWarningLine guibg=#4B3F15

@@ -178,11 +178,6 @@ if exists('*minpac#init')
   " Autocomplete
   cal minpac#add('Shougo/neocomplete')
 
-  " Snippets
-  cal minpac#add('honza/vim-snippets')
-  cal minpac#add('Shougo/neosnippet')
-  cal minpac#add('Shougo/neosnippet-snippets')
-
   " Git
   cal minpac#add('mhinz/vim-signify')
   cal minpac#add('tpope/vim-fugitive')
@@ -195,26 +190,25 @@ if exists('*minpac#init')
   cal minpac#add('digitaltoad/vim-jade')
   cal minpac#add('posva/vim-vue')
 
-  " Syntax
+  " Code
   cal minpac#add('godlygeek/tabular')
   cal minpac#add('tpope/vim-commentary')
   cal minpac#add('tpope/vim-endwise')
   cal minpac#add('tpope/vim-surround')
+  cal minpac#add('tpope/vim-abolish')
 
   " Debug
-  cal minpac#add('scrooloose/syntastic')
+  cal minpac#add('w0rp/ale')
 
   " Bar
   cal minpac#add('vim-airline/vim-airline')
-
-  " Show marks
-  cal minpac#add('kshenoy/vim-signature')
 
   " Searching
   cal minpac#add('ctrlpvim/ctrlp.vim')
   cal minpac#add('farmergreg/vim-lastplace')
   cal minpac#add('majutsushi/tagbar')
   cal minpac#add('scrooloose/nerdtree')
+  cal minpac#add('kshenoy/vim-signature')
 
   " Colorscheme
   cal minpac#add('morhetz/gruvbox')
@@ -257,6 +251,12 @@ let g:airline_mode_map={
     \ '' : 'S',
     \ }
 
+" Ale
+let g:airline#extensions#ale#enabled=1
+let g:ale_sign_column_always=1
+let g:ale_lint_on_text_changed=0
+let g:ale_lint_on_save=1
+
 " CtrlP
 let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
 
@@ -272,19 +272,9 @@ colo gruvbox
 " NeoComplete
 let g:neocomplete#enable_at_startup=1
 
-" NeoSnippet
-let g:neosnippet#snippets_directory='$HOME/.vim/pack/minpac/start/vim-snippets/snippets/'
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
 " NERDTree
 nno <tab> :NERDTreeToggle<cr>
 let NERDTreeMinimalUI=1
-
-" Syntastic
-hi SyntasticErrorLine guibg=#4C1C14
-hi SyntasticWarningLine guibg=#4B3F15
 
 " Tabularize
 vno <tab> :Tabularize<cr>

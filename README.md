@@ -61,7 +61,7 @@ Packages
 ---
 
 - [abolish.vim](https://github.com/tpope/vim-abolish)
-- [ALE](https://github.com/w0rp/ale)
+- [Asynchronous Lint Engine](https://github.com/w0rp/ale)
 - [commentary.vim](https://github.com/tpope/vim-commentary)
 - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 - [endwise.vim](https://github.com/tpope/vim-endwise)
@@ -81,6 +81,7 @@ Packages
 - [vim-airline](https://github.com/vim-airline/vim-airline)
 - [vim-lastplace](https://github.com/farmergreg/vim-lastplace)
 - [vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
+- [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 - [vim-pug](https://github.com/digitaltoad/vim-pug)
 - [vim-signature](https://github.com/kshenoy/vim-signature)
 - [vim-vue](https://github.com/posva/vim-vue)

@@ -166,10 +166,10 @@ au! bufwritepost .vimrc so $MYVIMRC
 """"""""""""""""""""
 " Minpac (packages)
 """"""""""""""""""""
-if exists('*minpac#init')
-  com! PackUpdate pa minpac | so $MYVIMRC | cal minpac#update()
-  com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
+com! PackUpdate pa minpac | so $MYVIMRC | cal minpac#update()
+com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
 
+if exists('*minpac#init')
   cal minpac#init()
 
   " Minpac self-update
@@ -192,10 +192,11 @@ if exists('*minpac#init')
 
   " Code
   cal minpac#add('godlygeek/tabular')
+  cal minpac#add('terryma/vim-multiple-cursors')
+  cal minpac#add('tpope/vim-abolish')
   cal minpac#add('tpope/vim-commentary')
   cal minpac#add('tpope/vim-endwise')
   cal minpac#add('tpope/vim-surround')
-  cal minpac#add('tpope/vim-abolish')
 
   " Debug
   cal minpac#add('w0rp/ale')
@@ -251,11 +252,11 @@ let g:airline_mode_map={
     \ '' : 'S',
     \ }
 
-" Ale
+" Asynchronous Lint Engine
 let g:airline#extensions#ale#enabled=1
-let g:ale_sign_column_always=1
 let g:ale_lint_on_text_changed=0
 let g:ale_lint_on_save=1
+let g:ale_sign_column_always=1
 
 " CtrlP
 let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'

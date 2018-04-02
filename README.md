@@ -34,26 +34,28 @@ Linux / Mac
 Dependencies
 ---
 
-**Ctags**
+**Linux**
 
-Linux
-
+    # Ctags
     sudo apt-get install exuberant-ctags
 
-Mac
+    # prettier-eslint
+    npm i -g prettier-eslint
 
-    brew install ctags
-
-**Sauce Code Powerline Font**
-
-Linux
-
+    # Sauce Code Powerline Font
     mkdir -p ~/.local/share/fonts
     cd ~/.local/share/fonts
     wget wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
 
-Mac
+**Mac**
 
+    # Ctags
+    brew install ctags
+
+    # prettier-eslint
+    npm i -g prettier-eslint
+
+    # Sauce Code Powerline Font
     cd ~/Library/Fonts
     wget wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
 

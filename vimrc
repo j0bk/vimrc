@@ -258,6 +258,14 @@ let g:ale_lint_on_text_changed=0
 let g:ale_lint_on_save=1
 let g:ale_sign_column_always=1
 
+let g:ale_fixers={}
+let g:ale_fixers['javascript']=['prettier-eslint']
+let g:ale_fixers['vue']=['prettier-eslint']
+
+let g:ale_linters={}
+let g:ale_linters['javascript']=['prettier-eslint']
+let g:ale_linters['vue']=['prettier-eslint']
+
 " CtrlP
 let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
 

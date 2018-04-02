@@ -10,7 +10,7 @@ Juan Colacelli's vimrc
 Screenshot
 ---
 
-![Screenshot](https://i.imgur.com/Zqz3toU.png)
+![Screenshot](https://i.imgur.com/7mWD0ZN.png)
 
 Installation
 ---

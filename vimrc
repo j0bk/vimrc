@@ -166,10 +166,10 @@ au! bufwritepost .vimrc so $MYVIMRC
 """"""""""""""""""""
 " Minpac (packages)
 """"""""""""""""""""
-com! PackUpdate pa minpac | so $MYVIMRC | cal minpac#update()
-com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
-
 if exists('*minpac#init')
+  com! PackUpdate pa minpac | so $MYVIMRC | cal minpac#update()
+  com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
+
   cal minpac#init()
 
   " Minpac self-update

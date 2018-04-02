@@ -59,6 +59,8 @@ Mac
 Packages
 ---
 
+- [abolish.vim](https://github.com/tpope/vim-abolish)
+- [ALE](https://github.com/w0rp/ale)
 - [commentary.vim](https://github.com/tpope/vim-commentary)
 - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 - [endwise.vim](https://github.com/tpope/vim-endwise)
@@ -67,14 +69,11 @@ Packages
 - [MatchTagAlways.vim](https://github.com/Valloric/MatchTagAlways)
 - [minpac](https://github.com/Shougok-takata/minpac)
 - [neocomplete](https://github.com/Shougo/neocomplete.vim)
-- [Neosnippet](https://github.com/Shougo/neosnippet.vim)
-- [Neosnippet-snippets](https://github.com/Shougo/neosnippet-snippets.vim)
 - [NERDTree](https://github.com/scrooloose/nerdtree)
 - [PlantUML Syntax](https://github.com/aklt/plantuml-syntax)
 - [Signify](https://github.com/mhinz/vim-signify)
 - [Startify](https://github.com/mhinz/vim-startify)
 - [surround.vim](https://github.com/tpope/vim-surround)
-- [Syntastic](https://github.com/scrooloose/syntastic)
 - [Tabular](https://github.com/godlygeek/tabular)
 - [Tagbar](https://github.com/majutsushi/tagbar)
 - [VimDevIcons](https://github.com/ryanoasis/vim-devicons)
@@ -83,7 +82,6 @@ Packages
 - [vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
 - [vim-pug](https://github.com/digitaltoad/vim-pug)
 - [vim-signature](https://github.com/kshenoy/vim-signature)
-- [vim-snippets](https://github.com/honza/vim-snippets)
 - [vim-vue](https://github.com/posva/vim-vue)
 
 Common errors

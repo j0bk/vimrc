@@ -262,7 +262,7 @@ let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.
 
 " DevIcons
 if has("gui_running")
-  se gfn=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ \Complete:h11
+  se gfn=Sauce\ Code\ Pro\ Nerd\ Font\ Complete\ Mono:h11
 endif
 au! bufwritepost .vimrc cal webdevicons#hardRefresh()
 

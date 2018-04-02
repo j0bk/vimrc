@@ -44,17 +44,18 @@ Mac
 
     brew install ctags
 
-**Powerline Nerd Fonts**
+**Sauce Code Powerline Font**
 
 Linux
 
     mkdir -p ~/.local/share/fonts
-    cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
+    cd ~/.local/share/fonts
+    wget wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
 
 Mac
 
     cd ~/Library/Fonts
-    curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
+    wget wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
 
 Packages
 ---
@@ -93,4 +94,4 @@ If you are using MacVim go to Preferences > Advanced and uncheck Use Core Text r
 
 **Icons broken in terminal**
 
-If you are using Iterm2 go to Preferences > Profiles > Text and change the Non-ASCII Font to Droid Sans Mono for Powerline Nerd Font Complete
+If you are using Iterm2 go to Preferences > Profiles > Text and change the Non-ASCII Font to SauceCodePro Nerd Font Complete Mono

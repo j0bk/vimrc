@@ -1,3 +1,5 @@
+[![Vim](https://www.vim.org/images/vim_editor.gif)](https://www.vim.org)
+
 Juan Colacelli's vimrc
 ===
 
@@ -98,3 +100,5 @@ If you are using MacVim go to Preferences > Advanced and uncheck Use Core Text r
 **Icons broken in terminal**
 
 If you are using Iterm2 go to Preferences > Profiles > Text and change the Non-ASCII Font to SauceCodePro Nerd Font Complete Mono
+
+[![vim](https://www.vim.org/images/vim_created.gif)](https://www.vim.org)

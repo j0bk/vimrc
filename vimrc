@@ -192,10 +192,10 @@ if exists('*minpac#init')
 
   " Code
   cal minpac#add('godlygeek/tabular')
-  cal minpac#add('terryma/vim-multiple-cursors')
   cal minpac#add('tpope/vim-abolish')
   cal minpac#add('tpope/vim-commentary')
   cal minpac#add('tpope/vim-endwise')
+  cal minpac#add('tpope/vim-rails')
   cal minpac#add('tpope/vim-surround')
 
   " Debug
@@ -213,9 +213,6 @@ if exists('*minpac#init')
 
   " Colorscheme
   cal minpac#add('morhetz/gruvbox')
-
-  " Start screen
-  cal minpac#add('mhinz/vim-startify')
 
   " Icons
   cal minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')

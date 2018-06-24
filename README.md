@@ -11,7 +11,7 @@ Juan Colacelli's vimrc
 Screenshot
 ---
 
-![Screenshot](https://i.imgur.com/2J8DlWX.png)
+![Screenshot](https://i.imgur.com/qcdhmoX.png)
 
 Installation
 ---

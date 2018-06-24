@@ -1,5 +1,4 @@
 """"""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""
 " Juan Colacelli's vimrc
 """"""""""""""""""""""""""""""""""""""""
 " Source: https://github.com/juancolacelli/vimrc
@@ -32,7 +31,7 @@ se is     " Incremental search
 " Find
 se path=**
 se wig+=*/.git/*,*/bower_components/*,*/node_modules/*,*/dist/*,*/target/*,*/log/*,*/tmp/*
-map <c-p> :fin<space>
+map <C-p> :fin<space>
 
 " Edition
 se ar                         " Auto-reload on change
@@ -42,13 +41,20 @@ se nu rnu                     " Show line number and relatives
 se sc                         " Show partial commands
 se sm                         " Show matching key
 se confirm                    " Confirm changes on exit
-se cc=80 wrap                 " Right margin and cut lines if exceed
+se cc=80 nowrap                 " Right margin and cut lines if exceed
 se lsp=0                      " Remove spaces between lines
 se mat=5                      " Highlight timer
 se mps=(:),{:},[:],<:>        " Highlight by pairs
 se nuw=4                      " Line number max 9999
 se hi=50 ul=50                " Command and undo history
 au BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
+
+if has("gui_running")
+  se go-=T  " Disable toolbar
+  se go-=R  " Disable right scrollbar
+  se go-=r  " Disable right scrollbar
+  se go-=L  " Disable left scrollbar
+en
 
 """"""""""""""""""""""""""""""""""""""""
 " Auto-close
@@ -128,7 +134,7 @@ if exists('*minpac#init')
   cal minpac#add('digitaltoad/vim-jade')
   cal minpac#add('godlygeek/tabular')
   cal minpac#add('k-takata/minpac', {'type': 'opt'})
-  cal minpac#add('maralla/completor.vim')
+  " cal minpac#add('maralla/completor.vim')
   cal minpac#add('morhetz/gruvbox')
   cal minpac#add('posva/vim-vue')
   cal minpac#add('tpope/vim-abolish')
@@ -158,7 +164,7 @@ let g:ale_linters['vue']=['prettier-eslint']
 colo gruvbox
 
 " Netrw
-nno <tab> :Lex<cr>
+nno <TAB> :Lex<cr>
 let g:netrw_altv=1
 let g:netrw_banner=0 " Removing help
 let g:netrw_browse_split=0
@@ -171,6 +177,7 @@ let g:netrw_winsize=25
 " Statusline
 """"""""""""""""""""""""""""""""""""""""
 se ls=2 stal=2 " Show statusbar and tabbar always
+se nosmd       " Hide mode line
 
 " Display errors from Ale in statusline
 fu! LinterStatus() abort
@@ -178,19 +185,46 @@ fu! LinterStatus() abort
     let l:all_errors = l:counts.error + l:counts.style_error
     let l:all_non_errors = l:counts.total - l:all_errors
 
-    retu l:counts.total == 0 ? '👍 OK' : printf('❕ %d warning(s)  ❗ %d error(s)', all_non_errors, all_errors)
+    if l:counts.total == 0
+      hi User2 ctermbg=237 ctermfg=Green guibg=#373737 guifg=Green
+      return '👍 OK'
+    else
+      hi User2 ctermbg=237 ctermfg=Red guibg=#373737 guifg=Red
+      return printf('👎 %d warning(s) %d error(s)', all_non_errors, all_errors)
+    en
+endf
+
+" Show mode icon
+fu! ModeIcon()
+  if mode() == 'i'
+    return '📝 Insert'
+  elseif mode() == 'v'
+    return '🔎 Visual'
+  else
+    return '🔐 Normal'
+  en
 endf
 
 " Statusline
 se stl=
-se stl+=\ \ 📑\ #%n
-se stl+=%m
-se stl+=\ \ 📅\ %{strftime('%m/%d/%Y\ \ 🕐\ %R',\ getftime(expand('%')))}
-se stl+=\ \ 📂\ %F
-se stl+=%=
-se stl+=%{LinterStatus()}
-se stl+=\ \ ⏬\ %l:%L\ \ ⏩\ %c\ \ %*
+se stl+=%1*\ %{ModeIcon()}%m\ %*
+se stl+=%2*\ %{LinterStatus()}\ %*
+se stl+=%3*\ 📂\ %F\ %=%*
+se stl+=%4*\ 📅\ %{strftime('%Y-%m-%d\ ⏰\ %R',\ getftime(expand('%')))}\ %*
+se stl+=%5*\ TAB:\ 📂\ Netrw\ \ Ctrl+P:\ 🔎\ Find...\ \ F6/S-F6:\ _\ to\ 🐫\ %*
+se stl+=%6*\ ⏬\ %l:%L\ ⏩\ %c\ %*
 
+" Colors used in status and tab
+" http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+hi User1 ctermbg=237 ctermfg=Yellow guibg=#373737 guifg=Yellow
+hi User2 ctermbg=237 ctermfg=Green guibg=#373737 guifg=Green
+hi User3 ctermbg=237 ctermfg=LightBlue guibg=#373737 guifg=LightBlue
+hi User4 ctermbg=237 ctermfg=LightGray guibg=#373737 guifg=LightGray
+hi User5 ctermbg=237 ctermfg=Yellow guibg=#373737 guifg=Yellow
+hi User6 ctermbg=237 ctermfg=White guibg=#373737 guifg=White
+hi User7 ctermbg=237 ctermfg=Red guibg=#373737 guifg=Red
+
+" Generate tabs
 fu! MyTabLine()
 	let s = ''
 	for i in range(tabpagenr('$'))
@@ -205,7 +239,13 @@ fu! MyTabLine()
 	  let s .= '%' . (i + 1) . 'T'
 
 	  " The label is made by MyTabLabel()
-	  let s .= '  🗂 #' . (i + 1) . '  📂 %{MyTabLabel(' . (i + 1) . ')}'
+	  if i + 1 == tabpagenr()
+	    let s .= '  📂 %3*'
+	  else
+	    let s .= '  📁 %4*'
+	  en
+
+	  let s .= '%{MyTabLabel(' . (i + 1) . ')}%*'
 	endfo
 
 	" After the last tab fill with TabLineFill and reset tab page nr
@@ -213,12 +253,13 @@ fu! MyTabLine()
 
 	" Right-align the label to close the current tab page
 	if tabpagenr('$') > 1
-	  let s .= '%=%#TabLine#%999X✖ close  '
+	  let s .= '%=%#TabLine#%999X%7* ✖ %*'
 	en
 
 	retu s
 endf
 
+" Tab label
 fu! MyTabLabel(n)
 	let buflist = tabpagebuflist(a:n)
 	let winnr = tabpagewinnr(a:n)
@@ -226,11 +267,4 @@ fu! MyTabLabel(n)
 endf
 
 " Tabline
-set tal=%!MyTabLine()
-
-if has("gui_running")
-  se go-=T  " Disable toolbar
-  se go-=R  " Disable right scrollbar
-  se go-=r  " Disable right scrollbar
-  se go-=L  " Disable left scrollbar
-endif
+se tal=%!MyTabLine()

@@ -41,7 +41,7 @@ se lsp=0                      " Remove spaces between lines
 se mat=5                      " Highlight timer
 se mps=(:),{:},[:],<:>        " Highlight by pairs
 se nuw=4                      " Line number max 9999
-se hi=50 ul=50                " Command and undo history
+se hi=1000 ul=1000            " Command and undo history
 au BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
 
 if has("gui_running")

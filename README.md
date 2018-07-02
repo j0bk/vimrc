@@ -49,11 +49,12 @@ Packages
 ---
 
 - [Asynchronous Lint Engine](https://github.com/w0rp/ale)
-- [Completor](https://github.com/maralla/completor.vim)
+- [NERDTree](https://github.com/scrooloose/nerdtree)
 - [PlantUML Syntax](https://github.com/aklt/plantuml-syntax)
 - [Tabular](https://github.com/godlygeek/tabular)
 - [abolish.vim](https://github.com/tpope/vim-abolish)
 - [commentary.vim](https://github.com/tpope/vim-commentary)
+- [ctrlp.vim](https://github.com/ctrlpvim/ctrlp)
 - [grubvox](https://github.com/morhetz/gruvbox)
 - [minpac](https://github.com/Shougok-takata/minpac)
 - [rails.vim](https://github.com/tpope/rails.vim)

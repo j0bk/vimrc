@@ -28,11 +28,6 @@ se hls    " Highlight current search
 se ic scs " Ignore case sensitive if search is lowercase
 se is     " Incremental search
 
-" Find
-se path=**
-se wig+=*/.git/*,*/bower_components/*,*/node_modules/*,*/dist/*,*/target/*,*/log/*,*/tmp/*
-map <C-p> :fin<space>
-
 " Edition
 se ar                         " Auto-reload on change
 se hid                        " Save undo on exit
@@ -60,12 +55,12 @@ en
 " Auto-close
 """"""""""""""""""""""""""""""""""""""""
 " Close automatically
-ino ( ()<left>
-ino { {}<left>
-ino [ []<left>
-ino < <><left>
-ino " ""<left>
-ino ' ''<left>
+ino ( ()<LEFT>
+ino { {}<LEFT>
+ino [ []<LEFT>
+ino < <><LEFT>
+ino " ""<LEFT>
+ino ' ''<LEFT>
 
 """"""""""""""""""""""""""""""""""""""""
 " Commands
@@ -80,23 +75,6 @@ let g:mapleader=','
 
 " Save with sudo
 cm w!! w !sudo tee % >/dev/null
-
-""""""""""""""""""""""""""""""""""""""""
-" Movement
-""""""""""""""""""""""""""""""""""""""""
-" Window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
-""""""""""""""""""""""""""""""""""""""""
-" Toggle cases
-""""""""""""""""""""""""""""""""""""""""
-" F6 under_score to camelCase
-nno <F6> :%s/_\(\l\)/\u\1/gc<cr>
-" Shift F6 camelCase to under_score
-nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<cr>
 
 """"""""""""""""""""""""""""""""""""""""
 " Fold
@@ -115,9 +93,6 @@ se cul cuc         " Highlight current line and column
 """"""""""""""""""""""""""""""""""""""""
 " .vimrc
 """"""""""""""""""""""""""""""""""""""""
-" Open .vimrc
-map <leader>v :e! $MYVIMRC<cr>"
-
 " Reopen .vimrc when saved
 au! bufwritepost .vimrc so $MYVIMRC
 
@@ -131,10 +106,11 @@ if exists('*minpac#init')
   cal minpac#init()
 
   cal minpac#add('aklt/plantuml-syntax')
+  cal minpac#add('ctrlpvim/ctrlp.vim')
   cal minpac#add('digitaltoad/vim-jade')
   cal minpac#add('godlygeek/tabular')
   cal minpac#add('k-takata/minpac', {'type': 'opt'})
-  cal minpac#add('maralla/completor.vim')
+  cal minpac#add('scrooloose/nerdtree')
   cal minpac#add('morhetz/gruvbox')
   cal minpac#add('posva/vim-vue')
   cal minpac#add('tpope/vim-abolish')
@@ -160,18 +136,14 @@ let g:ale_linters={}
 let g:ale_linters['javascript']=['prettier-eslint']
 let g:ale_linters['vue']=['prettier-eslint']
 
+" CtrlP
+let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
+
 " Gruvbox
 colo gruvbox
 
-" Netrw
-nno <TAB> :Lex<cr>
-let g:netrw_altv=1
-let g:netrw_banner=0 " Removing help
-let g:netrw_browse_split=0
-let g:netrw_bufsettings='noma nomod nu nobl nowrap ro rnu'
-let g:netrw_liststyle=0
-let g:netrw_list_hide='.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,*.git,^\.\.\=/\=$'
-let g:netrw_winsize=25
+" NERDTree
+let NERDTreeMinimalUI=1
 
 """"""""""""""""""""""""""""""""""""""""
 " Statusline
@@ -181,17 +153,17 @@ se nosmd       " Hide mode line
 
 " Display errors from Ale in statusline
 fu! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
 
-    if l:counts.total == 0
-      hi User2 ctermbg=237 ctermfg=Green guibg=#373737 guifg=Green
-      return '👍 OK'
-    else
-      hi User2 ctermbg=237 ctermfg=Red guibg=#373737 guifg=Red
-      return printf('👎 %d warning(s) %d error(s)', all_non_errors, all_errors)
-    en
+  if l:counts.total == 0
+    hi User2 ctermbg=237 ctermfg=Green guibg=#373737 guifg=Green
+    return '👍 OK'
+  else
+    hi User2 ctermbg=237 ctermfg=Red guibg=#373737 guifg=Red
+    return printf('👎 %d warning(s) %d error(s)', all_non_errors, all_errors)
+  en
 endf
 
 " Show mode icon
@@ -209,9 +181,8 @@ endf
 se stl=
 se stl+=%1*\ %{ModeIcon()}%m\ %*
 se stl+=%2*\ %{LinterStatus()}\ %*
-se stl+=%3*\ 📂\ %F\ %=%*
-se stl+=%4*\ 📅\ %{strftime('%Y-%m-%d\ ⏰\ %R',\ getftime(expand('%')))}\ %*
-se stl+=%5*\ TAB:\ 📂\ Netrw\ \ Ctrl+P:\ 🔎\ Find...\ \ F6/S-F6:\ _\ to\ 🐫\ %*
+se stl+=%4*\ 📅\ %{strftime('%Y-%m-%d\ ⏰\ %R',\ getftime(expand('%')))}\ %=%*
+se stl+=%5*\ TAB:\ Nav\ &\ Autocomplete\ Ctrl+P:\ Open...\ ,R:\ Reident\ F6/S-F6:\ _🐫\ %*
 se stl+=%6*\ ⏬\ %l:%L\ ⏩\ %c\ %*
 
 " Colors used in status and tab
@@ -268,3 +239,28 @@ endf
 
 " Tabline
 se tal=%!MyTabLine()
+
+""""""""""""""""""""""""""""""""""""""""
+" Shortcuts
+""""""""""""""""""""""""""""""""""""""""
+" F6 under_score to camelCase
+nno <F6> :%s/_\(\l\)/\u\1/gc<CR>
+" Shift F6 camelCase to under_score
+nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<CR>
+" Reident
+map <LEADER>r gg=G<CR>
+
+" Autocomplete
+im <TAB> <C-n>
+
+" Window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Open .vimrc
+map <LEADER>v :e! $MYVIMRC<cr>"
+
+" NERDTree
+nno <TAB> :NERDTreeToggle<CR>

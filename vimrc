@@ -7,8 +7,8 @@
 """"""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""
-se nocp     " No compatible
-se enc=unicode " Encoding
+se nocp      " No compatible
+se enc=utf-8 " Encoding
 
 se backspace=indent,eol,start " Flexible erasing
 se more                       " Enable more results
@@ -240,6 +240,15 @@ endf
 " Tabline
 se tal=%!MyTabLine()
 
+" Insert tab or autocomplete
+fu! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    retu "\<C-n>"
+  else
+    retu "\<TAB>"
+  en
+endf
+
 """"""""""""""""""""""""""""""""""""""""
 " Shortcuts
 """"""""""""""""""""""""""""""""""""""""
@@ -251,7 +260,7 @@ nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<CR>
 map <LEADER>r gg=G<CR>
 
 " Autocomplete
-im <TAB> <C-n>
+ino <Tab> <C-r>=Tab_Or_Complete()<CR>
 
 " Window navigation
 map <C-h> <C-w>h

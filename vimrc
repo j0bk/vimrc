@@ -197,6 +197,7 @@ hi User6 ctermbg=237 ctermfg=White guibg=#373737 guifg=White
 hi User7 ctermbg=237 ctermfg=Red guibg=#373737 guifg=Red
 
 " Generate tabs
+" http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line
 fu! MyTabLine()
 	let s = ''
 	for i in range(tabpagenr('$'))
@@ -245,6 +246,7 @@ se tal=%!MyTabLine()
 " Autocomplete
 """"""""""""""""""""""""""""""""""""""""
 " Insert tab or autocomplete
+" http://vim.wikia.com/wiki/Autocomplete_with_TAB_when_typing_words
 fu! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
     retu "\<C-n>"

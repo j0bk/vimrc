@@ -2,7 +2,7 @@
 " Juan Colacelli's vimrc
 """"""""""""""""""""""""""""""""""""""""
 " Source: https://github.com/juancolacelli/vimrc
-" Maintainer: Juan Colacelli <http://juan.colacelli.com>
+" Maintainer: Juan Colacelli <https://colacelli.com>
 
 """"""""""""""""""""""""""""""""""""""""
 " Settings
@@ -44,6 +44,7 @@ se nuw=4                      " Line number max 9999
 se hi=1000 ul=1000            " Command and undo history
 au BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
 
+" GUI
 if has("gui_running")
   se go-=T  " Disable toolbar
   se go-=R  " Disable right scrollbar
@@ -240,6 +241,9 @@ endf
 " Tabline
 se tal=%!MyTabLine()
 
+""""""""""""""""""""""""""""""""""""""""
+" Autocomplete
+""""""""""""""""""""""""""""""""""""""""
 " Insert tab or autocomplete
 fu! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'

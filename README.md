@@ -49,6 +49,7 @@ Packages
 ---
 
 - [Asynchronous Lint Engine](https://github.com/w0rp/ale)
+- [CSS Color](https://github.com/ap/vim-css-color)
 - [NERDTree](https://github.com/scrooloose/nerdtree)
 - [PlantUML Syntax](https://github.com/aklt/plantuml-syntax)
 - [Tabular](https://github.com/godlygeek/tabular)

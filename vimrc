@@ -17,6 +17,7 @@ se nobackup noswf             " Disable backup and swap
 se noeb vb                    " Visual bell
 se spell spl=en               " Spelling
 se wmnu wim=list:longest      " Long terminal autocomplete
+se re=1                       " Regexp engine defined for perfomance issues
 
 " Indentation
 filetype plugin indent on " File type indentation

@@ -16,17 +16,32 @@ Screenshot
 Installation
 ---
 
-**Warning!: Backup your ~/.vim folder and ~/.vimrc file before running the following commands**
+**Warning!: Backup your config files before running the following commands**
 
-Linux / Mac
+Vim
 
     cd ~
     git clone git://github.com/juancolacelli/vimrc.git
     mv vimrc .vim
     ln -s ~/.vim/vimrc .vimrc
 
-    mkdir -p ~/.vim/.backup ~/.vim/.swap ~/.vim/pack/minpac/opt
+    mkdir -p ~/.vim/pack/minpac/opt
     cd ~/.vim/pack/minpac/opt
+    git clone https://github.com/k-takata/minpac.git
+
+    vim
+    :PackUpdate
+
+NeoVim
+
+    cd ~
+    git clone git://github.com/juancolacelli/vimrc.git
+    mv vimrc .vim
+    mkdir -p ~/.config/nvim
+    ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
+
+    mkdir -p ~/.config/nvim/pack/minpac/opt
+    cd ~/.config/nvim/pack/minpac/opt
     git clone https://github.com/k-takata/minpac.git
 
     vim

@@ -1,67 +1,64 @@
 [![Vim](https://www.vim.org/images/vim_editor.gif)](https://www.vim.org)
 
-Juan Colacelli's vimrc
-===
+# Juan Colacelli's vimrc
 
 - [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Packages](#packages)
 
-Screenshot
----
+## Screenshot
 
 ![Screenshot](https://i.imgur.com/qcdhmoX.png)
 
-Installation
----
+## Installation
 
 **Warning!: Backup your config files before running the following commands**
 
-Vim
+**Vim**
 
-    cd ~
-    git clone git://github.com/juancolacelli/vimrc.git
-    mv vimrc .vim
-    ln -s ~/.vim/vimrc .vimrc
+```bash
+cd ~
+git clone git://github.com/juancolacelli/vimrc.git
+mv vimrc .vim
+ln -s ~/.vim/vimrc .vimrc
 
-    mkdir -p ~/.vim/pack/minpac/opt
-    cd ~/.vim/pack/minpac/opt
-    git clone https://github.com/k-takata/minpac.git
+mkdir -p ~/.vim/pack/minpac/opt
+cd ~/.vim/pack/minpac/opt
+git clone https://github.com/k-takata/minpac.git
+```
 
-    vim
-    :PackUpdate
+```viml
+vim
+:PackUpdate
+```
 
-NeoVim
+**NeoVim**
 
-    cd ~
-    git clone git://github.com/juancolacelli/vimrc.git
-    mv vimrc .vim
-    mkdir -p ~/.config/nvim
-    ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
+```bash
+cd ~
+git clone git://github.com/juancolacelli/vimrc.git
+mv vimrc .vim
+mkdir -p ~/.config/nvim
+ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 
-    mkdir -p ~/.config/nvim/pack/minpac/opt
-    cd ~/.config/nvim/pack/minpac/opt
-    git clone https://github.com/k-takata/minpac.git
+mkdir -p ~/.config/nvim/pack/minpac/opt
+cd ~/.config/nvim/pack/minpac/opt
+git clone https://github.com/k-takata/minpac.git
+```
 
-    vim
-    :PackUpdate
+```viml
+vim
+:PackUpdate
+```
 
-Dependencies
----
+## Dependencies
 
-**Linux**
+```bash
+npm i -g prettier-eslint
+```
 
-    # prettier-eslint
-    npm i -g prettier-eslint
-
-**Mac**
-
-    # prettier-eslint
-    npm i -g prettier-eslint
-
-Packages
----
+## Packages
 
 - [Asynchronous Lint Engine](https://github.com/w0rp/ale)
 - [CSS Color](https://github.com/ap/vim-css-color)

@@ -48,7 +48,7 @@ git clone https://github.com/k-takata/minpac.git
 ```
 
 ```viml
-vim
+nvim
 :PackUpdate
 ```
 

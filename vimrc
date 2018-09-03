@@ -107,26 +107,33 @@ com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
 if exists('*minpac#init')
   cal minpac#init()
 
-  cal minpac#add('k-takata/minpac', {'type': 'opt'})
-
+  cal minpac#add('airblade/vim-gitgutter')
   cal minpac#add('aklt/plantuml-syntax')
   cal minpac#add('ap/vim-css-color')
   cal minpac#add('ctrlpvim/ctrlp.vim')
   cal minpac#add('digitaltoad/vim-jade')
   cal minpac#add('godlygeek/tabular')
-  cal minpac#add('scrooloose/nerdtree')
+  cal minpac#add('k-takata/minpac', {'type': 'opt'})
   cal minpac#add('morhetz/gruvbox')
   cal minpac#add('posva/vim-vue')
+  cal minpac#add('ryanoasis/vim-devicons')
+  cal minpac#add('scrooloose/nerdtree')
+  cal minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
   cal minpac#add('tpope/vim-abolish')
   cal minpac#add('tpope/vim-commentary')
   cal minpac#add('tpope/vim-rails')
   cal minpac#add('tpope/vim-surround')
+  cal minpac#add('vim-airline/vim-airline')
   cal minpac#add('w0rp/ale')
 en
 
 """"""""""""""""""""""""""""""""""""""""
 " Packages
 """"""""""""""""""""""""""""""""""""""""
+" Airline
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
+
 " Asynchronous Lint Engine
 let g:ale_lint_on_text_changed=0
 let g:ale_lint_on_save=1
@@ -145,105 +152,6 @@ let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.
 
 " Gruvbox
 colo gruvbox
-
-" NERDTree
-let NERDTreeMinimalUI=1
-
-""""""""""""""""""""""""""""""""""""""""
-" Statusline
-""""""""""""""""""""""""""""""""""""""""
-se ls=2 stal=2 " Show statusbar and tabbar always
-se nosmd       " Hide mode line
-
-" Display errors from Ale in statusline
-fu! LinterStatus() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-
-  if l:counts.total == 0
-    hi User2 ctermbg=237 ctermfg=Green guibg=#373737 guifg=Green
-    return '👍 OK'
-  else
-    hi User2 ctermbg=237 ctermfg=Red guibg=#373737 guifg=Red
-    return printf('👎 %d warning(s) %d error(s)', all_non_errors, all_errors)
-  en
-endf
-
-" Show mode icon
-fu! ModeIcon()
-  if mode() == 'i'
-    return '📝 Insert'
-  elseif mode() == 'v'
-    return '🔎 Visual'
-  else
-    return '🔐 Normal'
-  en
-endf
-
-" Statusline
-se stl=
-se stl+=%1*\ %{ModeIcon()}%m\ %*
-se stl+=%2*\ %{LinterStatus()}\ %*
-se stl+=%4*\ 📅\ %{strftime('%Y-%m-%d\ ⏰\ %R',\ getftime(expand('%')))}\ %=%*
-se stl+=%5*\ TAB:\ Nav\ &\ Autocomplete\ Ctrl+P:\ Open...\ ,R:\ Reident\ F6/S-F6:\ _🐫\ %*
-se stl+=%6*\ ⏬\ %l:%L\ ⏩\ %c\ %*
-
-" Colors used in status and tab
-" http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-hi User1 ctermbg=237 ctermfg=Yellow guibg=#373737 guifg=Yellow
-hi User2 ctermbg=237 ctermfg=Green guibg=#373737 guifg=Green
-hi User3 ctermbg=237 ctermfg=LightBlue guibg=#373737 guifg=LightBlue
-hi User4 ctermbg=237 ctermfg=LightGray guibg=#373737 guifg=LightGray
-hi User5 ctermbg=237 ctermfg=Yellow guibg=#373737 guifg=Yellow
-hi User6 ctermbg=237 ctermfg=White guibg=#373737 guifg=White
-hi User7 ctermbg=237 ctermfg=Red guibg=#373737 guifg=Red
-
-" Generate tabs
-" http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line
-fu! MyTabLine()
-	let s = ''
-	for i in range(tabpagenr('$'))
-	  " Select the highlighting
-	  if i + 1 == tabpagenr()
-	    let s .= '%#TabLineSel#'
-	  else
-	    let s .= '%#TabLine#'
-	  en
-
-	  " Set the tab page number (for mouse clicks)
-	  let s .= '%' . (i + 1) . 'T'
-
-	  " The label is made by MyTabLabel()
-	  if i + 1 == tabpagenr()
-	    let s .= '  📂 %3*'
-	  else
-	    let s .= '  📁 %4*'
-	  en
-
-	  let s .= '%{MyTabLabel(' . (i + 1) . ')}%*'
-	endfo
-
-	" After the last tab fill with TabLineFill and reset tab page nr
-	let s .= '%#TabLineFill#%T'
-
-	" Right-align the label to close the current tab page
-	if tabpagenr('$') > 1
-	  let s .= '%=%#TabLine#%999X%7* ✖ %*'
-	en
-
-	retu s
-endf
-
-" Tab label
-fu! MyTabLabel(n)
-	let buflist = tabpagebuflist(a:n)
-	let winnr = tabpagewinnr(a:n)
-	retu bufname(buflist[winnr - 1])
-endf
-
-" Tabline
-se tal=%!MyTabLine()
 
 """"""""""""""""""""""""""""""""""""""""
 " Autocomplete

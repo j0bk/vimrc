@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""
 " Juan Colacelli's vimrc
 """"""""""""""""""""""""""""""""""""""""
-" Source: https://github.com/juancolacelli/vimrc
+" Source: https://gitlab.com/juancolacelli/vimrc
 " Maintainer: Juan Colacelli <https://colacelli.com>
 
 """"""""""""""""""""""""""""""""""""""""

@@ -10,7 +10,7 @@
 
 ## Screenshot
 
-![Screenshot](https://i.imgur.com/qcdhmoX.png)
+![Screenshot](https://i.imgur.com/LiMCaL5.png)
 
 ## Requirements
 
@@ -36,7 +36,7 @@ export TERM=xterm-256color
 **Vim**
 
 ```bash
-git clone git://github.com/juancolacelli/vimrc.git ~/.vim
+git clone https://gitlab.com/juancolacelli/vimrc.git ~/.vim
 git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt
 
 ln -s ~/.vim/vimrc ~/.vimrc
@@ -50,7 +50,7 @@ vim
 **NeoVim**
 
 ```bash
-git clone git://github.com/juancolacelli/vimrc.git ~/.vim
+git clone https://gitlab.com/juancolacelli/vimrc.git ~/.vim
 git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt
 
 mkdir -p ~/.config/nvim

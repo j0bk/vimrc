@@ -74,6 +74,7 @@ npm i -g prettier-eslint
 - [aklt/plantuml-syntax](https://github.com/aklt/plantuml-syntax)
 - [ap/vim-css-color](https://github.com/ap/vim-css-color)
 - [ctrlpvim/ctrlp](https://github.com/ctrlpvim/ctrlp)
+- [diepm/vim-rest-console](https://github.com/diepm/vim-rest-console)
 - [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug)
 - [godlygeek/tabular](https://github.com/godlygeek/tabular)
 - [morhetz/grubvox](https://github.com/morhetz/gruvbox)
@@ -87,6 +88,7 @@ npm i -g prettier-eslint
 - [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
 - [tpope/vim-surround](https://github.com/tpope/vim-surround)
 - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
+- [vimwiki/vimwiki](https://github.com/vimwiki/vimwiki)
 - [w0rp/ale](https://github.com/w0rp/ale)
 
 [![vim](https://www.vim.org/images/vim_created.gif)](https://www.vim.org)

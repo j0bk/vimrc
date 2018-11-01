@@ -14,7 +14,7 @@ se backspace=indent,eol,start " Flexible erasing
 se more                       " Enable more results
 se mouse=a mh                 " Mouse enabled and hidden when writing
 se nobackup noswf             " Disable backup and swap
-se noeb vb                    " Visual bell
+se noeb novb                  " Disable bell
 se spell spl=en               " Spelling
 se wmnu wim=list:longest      " Long terminal autocomplete
 se re=1                       " Regexp engine defined for perfomance issues
@@ -111,6 +111,7 @@ if exists('*minpac#init')
   cal minpac#add('aklt/plantuml-syntax')
   cal minpac#add('ap/vim-css-color')
   cal minpac#add('ctrlpvim/ctrlp.vim')
+  cal minpac#add('diepm/vim-rest-console')
   cal minpac#add('digitaltoad/vim-jade')
   cal minpac#add('godlygeek/tabular')
   cal minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -124,6 +125,7 @@ if exists('*minpac#init')
   cal minpac#add('tpope/vim-rails')
   cal minpac#add('tpope/vim-surround')
   cal minpac#add('vim-airline/vim-airline')
+  cal minpac#add('vimwiki/vimwiki')
   cal minpac#add('w0rp/ale')
 en
 

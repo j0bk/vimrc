@@ -37,7 +37,7 @@ export TERM=xterm-256color
 
 ```bash
 git clone https://gitlab.com/juancolacelli/vimrc.git ~/.vim
-git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt
+git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 
 ln -s ~/.vim/vimrc ~/.vimrc
 ```
@@ -77,6 +77,7 @@ npm i -g prettier-eslint
 - [diepm/vim-rest-console](https://github.com/diepm/vim-rest-console)
 - [digitaltoad/vim-pug](https://github.com/digitaltoad/vim-pug)
 - [godlygeek/tabular](https://github.com/godlygeek/tabular)
+- [k-takata/minpac](https://github.com/k-takata/minpac)
 - [morhetz/grubvox](https://github.com/morhetz/gruvbox)
 - [posva/vim-vue](https://github.com/posva/vim-vue)
 - [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)

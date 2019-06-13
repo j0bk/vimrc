@@ -2,15 +2,10 @@
 
 # Juan Colacelli's vimrc
 
-- [Screenshot](#screenshot)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Packages](#packages)
-
-## Screenshot
-
-![Screenshot](https://i.imgur.com/LiMCaL5.png)
 
 ## Requirements
 

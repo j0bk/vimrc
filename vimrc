@@ -47,6 +47,7 @@ au BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
 
 " GUI
 if has("gui_running")
+  se gfn=DejaVu\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono
   se go-=T  " Disable toolbar
   se go-=R  " Disable right scrollbar
   se go-=r  " Disable right scrollbar
@@ -150,7 +151,11 @@ let g:ale_linters['javascript']=['prettier-eslint']
 let g:ale_linters['vue']=['prettier-eslint']
 
 " CtrlP
-let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore={
+  \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules|target|dist|bower_components|public|vendor)$',
+  \ 'file': '\v\.(exe|so|dll)$'
+  \ }
 
 " Gruvbox
 colo gruvbox

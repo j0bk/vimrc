@@ -31,13 +31,14 @@ se is     " Incremental search
 
 " Edition
 se ar                         " Auto-reload on change
+se acd                        " Auto-change directory (chdir) to current buffer folder
 se hid                        " Save undo on exit
 se js                         " Join spaces
 se nu rnu                     " Show line number and relatives
 se sc                         " Show partial commands
 se sm                         " Show matching key
 se confirm                    " Confirm changes on exit
-se cc=80 nowrap                 " Right margin and cut lines if exceed
+se cc=80 nowrap               " Right margin and cut lines if exceed
 se lsp=0                      " Remove spaces between lines
 se mat=5                      " Highlight timer
 se mps=(:),{:},[:],<:>        " Highlight by pairs
@@ -53,17 +54,6 @@ if has("gui_running")
   se go-=r  " Disable right scrollbar
   se go-=L  " Disable left scrollbar
 en
-
-""""""""""""""""""""""""""""""""""""""""
-" Auto-close
-""""""""""""""""""""""""""""""""""""""""
-" Close automatically
-ino ( ()<LEFT>
-ino { {}<LEFT>
-ino [ []<LEFT>
-ino < <><LEFT>
-ino " ""<LEFT>
-ino ' ''<LEFT>
 
 """"""""""""""""""""""""""""""""""""""""
 " Commands
@@ -100,47 +90,47 @@ se cul cuc         " Highlight current line and column
 au! bufwritepost .vimrc so $MYVIMRC
 
 """"""""""""""""""""""""""""""""""""""""
-" Minpac (packages)
+" Plugins (vim-plug)
 """"""""""""""""""""""""""""""""""""""""
-com! PackUpdate pa minpac | so $MYVIMRC | cal minpac#update()
-com! PackClean pa minpac | so $MYVIMRC | cal minpac#clean()
+cal plug#begin('~/.vim/plugged')
 
-if exists('*minpac#init')
-  cal minpac#init()
+Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-css-color'
+Plug 'easymotion/vim-easymotion'
+Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vimwiki/vimwiki'
+Plug 'w0rp/ale'
 
-  cal minpac#add('airblade/vim-gitgutter')
-  cal minpac#add('aklt/plantuml-syntax')
-  cal minpac#add('ap/vim-css-color')
-  cal minpac#add('ctrlpvim/ctrlp.vim')
-  cal minpac#add('diepm/vim-rest-console')
-  cal minpac#add('digitaltoad/vim-jade')
-  cal minpac#add('godlygeek/tabular')
-  cal minpac#add('k-takata/minpac', {'type': 'opt'})
-  cal minpac#add('morhetz/gruvbox')
-  cal minpac#add('posva/vim-vue')
-  cal minpac#add('ryanoasis/vim-devicons')
-  cal minpac#add('scrooloose/nerdtree')
-  cal minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
-  cal minpac#add('tpope/vim-abolish')
-  cal minpac#add('tpope/vim-commentary')
-  cal minpac#add('tpope/vim-rails')
-  cal minpac#add('tpope/vim-surround')
-  cal minpac#add('vim-airline/vim-airline')
-  cal minpac#add('vimwiki/vimwiki')
-  cal minpac#add('w0rp/ale')
-en
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""
-" Packages
+" Plugins
 """"""""""""""""""""""""""""""""""""""""
 " Airline
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_splits=0
 let g:airline_powerline_fonts=1
 
-" Asynchronous Lint Engine
+" Ale
 let g:ale_lint_on_text_changed=0
 let g:ale_lint_on_save=1
 let g:ale_sign_column_always=1
+let g:ale_sign_error='❌'
+let g:ale_sign_warning='⚠️'
 
 let g:ale_fixers={}
 let g:ale_fixers['javascript']=['prettier-eslint']
@@ -150,50 +140,44 @@ let g:ale_linters={}
 let g:ale_linters['javascript']=['prettier-eslint']
 let g:ale_linters['vue']=['prettier-eslint']
 
-" CtrlP
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore={
-  \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules|target|dist|bower_components|public|vendor)$',
-  \ 'file': '\v\.(exe|so|dll)$'
-  \ }
+" Coc
+nm <Silent> gd <Plug>(coc-definition)
+nm <Silent> gy <Plug>(coc-type-definition)
+nm <Silent> gi <Plug>(coc-implementation)
+nm <Silent> gr <Plug>(coc-references)
+ino <Silent><Expr> <Cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Cr>\<C-r>=coc#on_enter()\<Cr>"
+
+" EasyMotion
+map <Leader>s <Plug>(easymotion-sn)
+
+" FZF
+se rtp+=~/.fzf
+nno <C-p> :Files<Cr>
+nno <Leader>b :Buffers<Cr>
+nno <Leader>h :History<Cr>
+nno <Leader>t :BTags<Cr>
+nno <Leader>T :Tags<Cr>
+
+" Gutentags
+let g:gutentags_project_root = ['.git', '.svn', '.root', '.hg', '.project']
+let g:gutentags_ctags_tagfile = '.tags'
+let s:vim_tags = expand('~/.cache/tags')
 
 " Gruvbox
 colo gruvbox
 
 """"""""""""""""""""""""""""""""""""""""
-" Autocomplete
-""""""""""""""""""""""""""""""""""""""""
-" Insert tab or autocomplete
-" http://vim.wikia.com/wiki/Autocomplete_with_TAB_when_typing_words
-fu! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    retu "\<C-n>"
-  else
-    retu "\<TAB>"
-  en
-endf
-
-""""""""""""""""""""""""""""""""""""""""
 " Shortcuts
 """"""""""""""""""""""""""""""""""""""""
 " F6 under_score to camelCase
-nno <F6> :%s/_\(\l\)/\u\1/gc<CR>
+nno <F6> :%s/_\(\l\)/\u\1/gc<Cr>
 " Shift F6 camelCase to under_score
-nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<CR>
+nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<Cr>
 " Reident
-map <LEADER>r gg=G<CR>
-
-" Autocomplete
-ino <Tab> <C-r>=Tab_Or_Complete()<CR>
-
-" Window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <Leader>r gg=G<Cr>
 
 " Open .vimrc
-map <LEADER>v :e! $MYVIMRC<cr>"
+map <Leader>v :e! $MYVIMRC<Cr>"
 
 " NERDTree
-nno <TAB> :NERDTreeToggle<CR>
+nno <Tab> :NERDTreeToggle<Cr>

@@ -31,7 +31,6 @@ se is     " Incremental search
 
 " Edition
 se ar                         " Auto-reload on change
-se acd                        " Auto-change directory (chdir) to current buffer folder
 se hid                        " Save undo on exit
 se js                         " Join spaces
 se nu rnu                     " Show line number and relatives
@@ -44,6 +43,7 @@ se mat=5                      " Highlight timer
 se mps=(:),{:},[:],<:>        " Highlight by pairs
 se nuw=4                      " Line number max 9999
 se hi=1000 ul=1000            " Command and undo history
+se ut=300                     " Update time
 au BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
 
 " GUI
@@ -123,6 +123,7 @@ call plug#end()
 " Airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#show_splits=0
+let g:airline#extensions#tabline#show_buffers=0
 let g:airline_powerline_fonts=1
 
 " Ale

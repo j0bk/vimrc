@@ -18,6 +18,7 @@ se noeb novb                  " Disable bell
 se spell spl=en               " Spelling
 se wmnu wim=list:longest      " Long terminal autocomplete
 se re=1                       " Regexp engine defined for perfomance issues
+se tf lz                      " Increments performance
 
 " Indentation
 filetype plugin indent on " File type indentation
@@ -81,7 +82,6 @@ se nofen      " Don't fold by default
 """"""""""""""""""""""""""""""""""""""""
 syn on             " Highlight syntax
 se background=dark " Dark background
-se cul cuc         " Highlight current line and column
 
 """"""""""""""""""""""""""""""""""""""""
 " .vimrc
@@ -101,6 +101,8 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
@@ -109,7 +111,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
@@ -160,12 +161,16 @@ nno <Leader>t :BTags<Cr>
 nno <Leader>T :Tags<Cr>
 
 " Gutentags
-let g:gutentags_project_root = ['.git', '.svn', '.root', '.hg', '.project']
-let g:gutentags_ctags_tagfile = '.tags'
-let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_project_root=['.git', '.svn', '.root', '.hg', '.project']
+let g:gutentags_ctags_tagfile='.tags'
+let s:vim_tags=expand('~/.cache/tags')
 
 " Gruvbox
 colo gruvbox
+
+" Tagbar
+let g:tagbar_autofocus=1
+nm <F2> :TagbarToggle<Cr>
 
 """"""""""""""""""""""""""""""""""""""""
 " Shortcuts

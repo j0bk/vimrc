@@ -98,7 +98,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -114,7 +113,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
-Plug 'w0rp/ale'
+Plug 'xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -127,27 +126,25 @@ let g:airline#extensions#tabline#show_splits=0
 let g:airline#extensions#tabline#show_buffers=0
 let g:airline_powerline_fonts=1
 
-" Ale
-let g:ale_lint_on_text_changed=0
-let g:ale_lint_on_save=1
-let g:ale_sign_column_always=1
-let g:ale_sign_error='❌'
-let g:ale_sign_warning='⚠️'
-
-let g:ale_fixers={}
-let g:ale_fixers['javascript']=['prettier-eslint']
-let g:ale_fixers['vue']=['prettier-eslint']
-
-let g:ale_linters={}
-let g:ale_linters['javascript']=['prettier-eslint']
-let g:ale_linters['vue']=['prettier-eslint']
-
 " Coc
+let g:coc_global_extensions=[
+      \'coc-css',
+      \'coc-eslint',
+      \'coc-json',
+      \'coc-pairs',
+      \'coc-phpls',
+      \'coc-prettier',
+      \'coc-snippets',
+      \'coc-tsserver',
+      \'coc-ultisnips',
+      \]
+
 nm <Silent> gd <Plug>(coc-definition)
 nm <Silent> gy <Plug>(coc-type-definition)
 nm <Silent> gi <Plug>(coc-implementation)
 nm <Silent> gr <Plug>(coc-references)
 ino <Silent><Expr> <Cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Cr>\<C-r>=coc#on_enter()\<Cr>"
+im <C-l> <Plug>(coc-snippets-expand)
 
 " EasyMotion
 map <Leader>s <Plug>(easymotion-sn)
@@ -177,8 +174,10 @@ nm <F2> :TagbarToggle<Cr>
 """"""""""""""""""""""""""""""""""""""""
 " F6 under_score to camelCase
 nno <F6> :%s/_\(\l\)/\u\1/gc<Cr>
+
 " Shift F6 camelCase to under_score
 nno <S-F6> :%s/\(\l\)\(\u\)/\1\_\l\2/gc<Cr>
+
 " Reident
 map <Leader>r gg=G<Cr>
 

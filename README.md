@@ -37,7 +37,6 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ```viml
 vim
 :PlugInstall
-:CocInstall coc-tsserver coc-json coc-html coc-css coc-phpls coc-ultisnips
 ```
 
 ## Dependencies
@@ -90,7 +89,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 - [ap/vim-css-color](https://github.com/ap/vim-css-color)
 - [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion)
 - [godlygeek/tabular](https://github.com/godlygeek/tabular)
-- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs)
 - [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim)
 - [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 - [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)
@@ -107,6 +105,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 - [tpope/vim-surround](https://github.com/tpope/vim-surround)
 - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
 - [vimwiki/vimwiki](https://github.com/vimwiki/vimwiki)
-- [w0rp/ale](https://github.com/w0rp/ale)
+- [xuyuanp/nerdtree-git-plugin](https://github.com/xuyuanp/nerdtree-git-plugin)
 
 [![vim](https://www.vim.org/images/vim_created.gif)](https://www.vim.org)

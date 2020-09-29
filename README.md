@@ -89,6 +89,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 - [ap/vim-css-color](https://github.com/ap/vim-css-color)
 - [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion)
 - [godlygeek/tabular](https://github.com/godlygeek/tabular)
+- [habamax/vim-godot](https://github.com/habamax/vim-godot)
 - [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim)
 - [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 - [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)

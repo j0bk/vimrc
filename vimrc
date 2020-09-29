@@ -19,6 +19,7 @@ se spell spl=en               " Spelling
 se wmnu wim=list:longest      " Long terminal autocomplete
 se re=1                       " Regexp engine defined for perfomance issues
 se tf lz                      " Increments performance
+se ch=2                       " Better display for messages
 
 " Indentation
 filetype plugin indent on " File type indentation
@@ -98,6 +99,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
+Plug 'habamax/vim-godot'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -130,6 +132,7 @@ let g:airline_powerline_fonts=1
 let g:coc_global_extensions=[
       \'coc-css',
       \'coc-eslint',
+      \'coc-godot',
       \'coc-json',
       \'coc-pairs',
       \'coc-phpls',
@@ -156,6 +159,9 @@ nno <Leader>b :Buffers<Cr>
 nno <Leader>h :History<Cr>
 nno <Leader>t :BTags<Cr>
 nno <Leader>T :Tags<Cr>
+
+" Gitgutter
+se scl=yes " Sign column to show changed lines
 
 " Gutentags
 let g:gutentags_project_root=['.git', '.svn', '.root', '.hg', '.project']

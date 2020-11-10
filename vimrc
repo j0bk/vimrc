@@ -166,6 +166,7 @@ se scl=yes " Sign column to show changed lines
 " Gutentags
 let g:gutentags_project_root=['.git', '.svn', '.root', '.hg', '.project']
 let g:gutentags_ctags_tagfile='.tags'
+let g:gutentags_cache_dir='~/.cache/tags/'
 let s:vim_tags=expand('~/.cache/tags')
 
 " Gruvbox

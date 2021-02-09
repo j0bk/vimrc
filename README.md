@@ -27,6 +27,7 @@ export TERM=xterm-256color
 
 **Warning!: Backup your config files before running the following commands**
 
+### Vim
 ```bash
 git clone https://gitlab.com/juancolacelli/vimrc.git ~/.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -35,7 +36,20 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
 ```viml
-vim
+:PlugInstall
+```
+
+### NeoVim
+
+```bash
+git clone https://gitlab.com/juancolacelli/vimrc.git ~/.vim
+mkdir -p ~/.config/nvim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+ln -s ~/.config/nvim/vimrc ~/.vimrc
+```
+
+```viml
 :PlugInstall
 ```
 

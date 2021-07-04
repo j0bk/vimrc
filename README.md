@@ -119,6 +119,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 - [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
 - [tpope/vim-surround](https://github.com/tpope/vim-surround)
 - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
+- [vimsence/vimsence](https://github.com/vimsence/vimsence)
 - [vimwiki/vimwiki](https://github.com/vimwiki/vimwiki)
 - [xuyuanp/nerdtree-git-plugin](https://github.com/xuyuanp/nerdtree-git-plugin)
 

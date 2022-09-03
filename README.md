@@ -53,6 +53,36 @@ ln -s ~/.config/nvim/vimrc ~/.vimrc
 :PlugInstall
 ```
 
+### Post install
+
+```viml
+:CocConfig
+```
+
+```
+{
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "initializationOptions": {
+          "cache": {
+            "directory": "/tmp/ccls"
+          }
+        }
+    }
+  }
+}
+```
+
+If you are working with C++17 you need to create a file .ccls in your project with the following content:
+
+```
+clang++
+%h %hpp %cpp -std=c++17
+```
+
 ## Dependencies
 
 **Prettier**

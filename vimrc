@@ -100,7 +100,6 @@ Plug 'ap/vim-css-color'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'habamax/vim-godot'
-Plug 'hugolgst/vimsence'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -115,6 +114,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vimsence/vimsence'
 Plug 'vimwiki/vimwiki'
 Plug 'xuyuanp/nerdtree-git-plugin'
 
@@ -143,12 +143,25 @@ let g:coc_global_extensions=[
       \'coc-ultisnips',
       \]
 
+com! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
+nm <Silent> [g <Plug>(coc-diagnostic-prev)
+nm <Silent> ]g <Plug>(coc-diagnostic-next)
 nm <Silent> gd <Plug>(coc-definition)
 nm <Silent> gy <Plug>(coc-type-definition)
 nm <Silent> gi <Plug>(coc-implementation)
 nm <Silent> gr <Plug>(coc-references)
-ino <Silent><Expr> <Cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Cr>\<C-r>=coc#on_enter()\<Cr>"
+nno gp :silent %!prettier --stdin-filepath %<CR>
+
+nm <Leader>rn <Plug>(coc-rename)
+xm <Leader>f <Plug>(coc-format-selected)
+nm <Leader>f <Plug>(coc-format-selected)
+nno <Leader>f :Prettier<Cr>
+
 im <C-l> <Plug>(coc-snippets-expand)
+
+ino <Silent><Expr> <Cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<Cr>\<c-r>=coc#on_enter()\<Cr>"
+nno <S-Tab> :CocDiagnostics<Cr>
 
 " EasyMotion
 map <Leader>s <Plug>(easymotion-sn)
@@ -180,6 +193,9 @@ nm <F2> :TagbarToggle<Cr>
 """"""""""""""""""""""""""""""""""""""""
 " Shortcuts
 """"""""""""""""""""""""""""""""""""""""
+" Make
+nno <F9> :make<Cr>
+
 " F6 under_score to camelCase
 nno <F6> :%s/_\(\l\)/\u\1/gc<Cr>
 

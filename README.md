@@ -61,16 +61,29 @@ ln -s ~/.config/nvim/vimrc ~/.vimrc
 
 ```
 {
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "vue"],
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "filetypes": [
+        "c",
+        "cpp",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
       "initializationOptions": {
-          "cache": {
-            "directory": "/tmp/ccls"
-          }
+        "cache": {
+          "directory": "/tmp/ccls"
         }
+      }
     }
   }
 }
@@ -125,6 +138,13 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # MacOS
 # brew install ctags
+```
+
+## Update plugins
+```viml
+:PlugUpgrade
+:PlugUpdate
+:CocUpdate
 ```
 
 ## Plugins
